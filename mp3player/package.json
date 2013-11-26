@@ -1,0 +1,12 @@
+{
+  "name": "mp3player",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node mp3player.js"
+  },
+  "dependencies": {
+    "lame":"1.0.3",
+    "speaker":"0.0.10"
+  }
+}
