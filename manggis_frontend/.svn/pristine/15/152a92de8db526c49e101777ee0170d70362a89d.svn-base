@@ -1,0 +1,51 @@
+@import "../../../js/lib/bootstrap-3.0/less/variables.less";
+@import "../../../js/lib/bootstrap-3.0/less/mixins.less";
+@import "../../../js/lib/bootstrap-3.0/less/manggis/mixins.less";
+
+.main-part {
+	width: 80%;
+}
+.side-part {
+	width: 18%;
+}
+
+.place-holder-text {
+	font-size: @font-size-base;
+}
+.place-holder-text {
+	width: 130px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.data-grid-cell-inner:hover a.hidden {
+	display: inline !important;
+	visibility: visible !important;
+}
+
+.create-campaign .btn {
+	width: 160px;
+}
+
+@media screen and (max-width: 1024px) {
+	.main-part {
+		width: auto;
+	}
+	.side-part {
+		width: auto;
+	}
+
+	.customer-list {
+		clear: both;
+	}
+
+	.sub-action {
+		.block-basic;
+		text-align: center;
+	}
+	.sub-action p {
+		float: left;
+		width: 50%;
+		text-align: center;
+	}
+}

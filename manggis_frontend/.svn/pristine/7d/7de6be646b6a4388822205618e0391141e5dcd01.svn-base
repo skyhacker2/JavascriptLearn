@@ -1,0 +1,4 @@
+@theme-gray-color: #888;
+@theme-color: @theme-gray-color;
+
+@link-color: lighten(@theme-color, 10%);

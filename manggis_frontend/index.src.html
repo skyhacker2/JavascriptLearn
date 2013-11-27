@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>RI</title>
+<!-- include "js/inc/header.js" -->
+<script type="text/javascript">
+(function() {
+	var lang = (navigator.language || navigator.userLanguage).toLowerCase();
+	lang = G.LANG_MAP[lang] || 'en';
+	var m = document.cookie.match(/(?:^|;)\s*language=(\w+)/);
+	if(m) {
+		lang = G.LANG_MAP[m[1]] || lang;
+	}
+	location.replace(G.ORIGIN + G.BASE + 'html/login/login-' + lang + '.html');
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

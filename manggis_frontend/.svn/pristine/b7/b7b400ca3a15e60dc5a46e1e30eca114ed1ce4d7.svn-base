@@ -1,0 +1,19 @@
+<%if(notifyEmails.length) {%>
+	<p class="desc">
+		Notification will be sent to your login email and below email list.
+	</p>
+	<%=notifyEmails.join('; ')%>
+<%} else {%>
+	<p class="desc">
+		A notification will be sent to your login email after the job is completed. You can also specify some other emails to receive the notification.
+	</p>
+	<div class="form-group">
+		<div class="input-group">
+			<input id="send-notification-emails" type="text" class="form-control" placeholder="Input email addresses seperated by semicolon" data-validator="mandatory emailList" />
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" data-rfl-click="confirmNotifyEmails">Confirm</button>
+			</span>
+		</div>
+		<span class="help-block help-error"></span>
+	</div>
+<%}%>

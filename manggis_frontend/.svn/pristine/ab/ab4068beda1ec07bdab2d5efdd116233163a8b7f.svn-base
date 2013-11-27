@@ -1,0 +1,90 @@
+p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px; color: #333333;
+}
+.image {
+	width: 99%;
+	height: 260px;
+	background: #e2e2e2;
+	-moz-border-radius: 8px;
+	-webket-border-radius: 8px;
+	border-radius: 8px;
+}
+.cke_focus {
+	border: 2px solid orange;
+	outline: none;
+}
+.cke_black_focus {
+	background: #666666;
+}
+body {
+	
+	margin: 0px;
+	padding: 0px;
+}
+.icon-larger {
+	font-size: 150px;
+	color: #555555;
+}
+.btn {
+	text-decoration: none;
+}
+.block.blockFocus {
+	outline: 5px solid #369fe4;
+}
+.minHolder {
+	backgroud: #84b3e6;
+	width: 100%;
+}
+.fix-btn {
+	position: absolute;
+	background: #f3f3f3;
+	opacity: 0.8;
+	padding: 5px 0;
+	a {
+		text-decoration: none;
+	}
+}
+.dropdown-menu > li > p {
+	text-decoration: none;
+	font-size: 15px;
+	text-align: center;
+	color: #777777;
+}
+.dropImage {
+	position: relative;
+}
+.nothing {
+	width: 90%;
+	border:5px solid #f3f3f3;
+	margin: 5px 0;
+	padding: 3px 0;
+	position: relative;
+	a {
+		line-height: 30px;
+		color: #959595;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+.capture {
+	outline: 1px dashed orange;
+}
+#design-div {
+	border: 1px solid #b6b6b6;
+}
+#container {
+	margin: auto;
+	width: 700px;
+}
+.popover {
+	z-index: 9999;
+}
+.cke_button__insertpersonalizedinformation_icon {
+	cursor: pointer !important;
+	background: url(../../../js/lib/ckeditor/plugins/ripersonalizer/icons/ripersonalizer.gif) left top no-repeat !important;
+}
+.cke_button__insertrilink_icon {
+	cursor: pointer !important;
+	background: url(../../../js/lib/ckeditor/plugins/rilink/icons/rilink.gif) left top no-repeat !important;
+}

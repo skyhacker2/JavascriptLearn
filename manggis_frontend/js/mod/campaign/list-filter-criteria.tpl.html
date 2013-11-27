@@ -1,0 +1,15 @@
+<%if(creationDateFrom || creationDateTo || campaignStatus || campaignName) {%>
+	<div class="row-fluid">
+		<%if(creationDateFrom || creationDateTo) {%>
+			<div class="span6"><strong>Creation Date</strong> : <%=creationDateFrom%> ~ <%=creationDateTo%> <a href="javascript:void(0);" data-rfl-click="removeFilterCriteria 5_6"><i class="icon-remove-sign"></i></a></div>
+		<%}%>
+		<%if(campaignName) {%>
+			<div class="span6"><strong>Campaign Name</strong> : <%==campaignName%> <a href="javascript:void(0);" data-rfl-click="removeFilterCriteria 7"><i class="icon-remove-sign"></i></a></div>
+		<%}%>
+	</div>
+	<%if(campaignStatus) {%>
+		<div class="row-fluid">
+			<div class="span6"><strong>Campaign Status</strong> : <%=lang.campaign.status[campaignStatus]%> <a href="javascript:void(0);" data-rfl-click="removeFilterCriteria 1"><i class="icon-remove-sign"></i></a></div>
+		</div>
+	<%}%>
+<%}%>

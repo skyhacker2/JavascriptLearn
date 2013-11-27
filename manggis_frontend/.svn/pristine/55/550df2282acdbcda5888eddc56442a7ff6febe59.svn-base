@@ -1,0 +1,10 @@
+<%if(typeof body !== undefined){%>
+<div style="border-bottom: 1px solid #000000;">
+	<%=body%>
+</div>
+<%}%>
+<div class="form-group" style="margin-top: 20px;">
+	<label><%=message%></label>
+	<input type="text" id="confirm-input" />
+	<span class="help-inline"></span>
+</div>

@@ -1,0 +1,28 @@
+<%->columnWidth%>
+	<colgroup>
+		<col style="width: <%=column.width%>px;">
+	</colgroup>
+<%<-%>
+<%->columnHeader%>
+	<th class="<%=column.type == 'checkbox' ? 'data-grid-checkbox-cell' : ''%> <%=i == l - 1 ? 'data-grid-last-cell' : ''%>">
+		<div class="data-grid-cell-inner" style="text-align: <%=column.textAlign || 'left'%>;">
+			<%if(column.type == 'checkbox') {->columnHeader%>
+				<label class="mockup-checkbox">
+					<input class="data-grid-check-box-all" type="checkbox" />
+					<span><i class="icon-ok"></i></span>
+				</label>
+			<%} else {->columnHeader%>
+				<%if(column.headerRenderer) {->columnHeader%>
+					<%=column.headerRenderer(column.name, i, column, sortColumnId, sortOrder)%>
+				<%} else if(column.sortable) {->columnHeader%>
+					<a class="data-grid-sortable" data-column-id="<%=column.id%>" href="javascript:void(0);" onclick="return false" title="<%=column.name%>">
+						<%=column.name%>
+						<%=sortColumnId == column.id ? (sortOrder == 'desc' ? '<span class="data-grid-sort-arrow-down"></span>' : '<span class="data-grid-sort-arrow-up"></span>') : ''%>
+					</a>
+				<%} else {->columnHeader%>
+					<span title="<%=column.name%>"><%=column.name%></span>
+				<%}%>
+			<%}->columnHeader%>
+		</div>
+	</th>
+<%<-%>

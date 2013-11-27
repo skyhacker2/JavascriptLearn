@@ -1,0 +1,29 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"id": "1",
+		"status": "DRAFT",
+		"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+		"createTime": 1371108472853,
+		"campaign": {
+			"contentEditor": 1,
+			"subject": "Good News!",
+			"fromName": "Gary Wang",
+			"fromEmail": "gary.wang@radicasys.com",
+			"replyToName": "Ocean Yang",
+			"replyToEmail": "ocean.yang@radicasys.com"
+		},
+		"htmlDefined": true,
+		"plainTextDefined": true,
+		"delivery": {
+			"customerGroups": ["1"], 
+			"importJobId": "1",
+			"oneTime": true,
+			"deliverToAll": false, 
+			"deliverImmediately": true, 
+			"skipComplainedCustomer": true,
+			"scheduleDate": 1372307773616
+		}
+	}
+}

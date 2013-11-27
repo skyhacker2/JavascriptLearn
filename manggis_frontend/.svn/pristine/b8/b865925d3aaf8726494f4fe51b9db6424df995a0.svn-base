@@ -1,0 +1,11 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"customerGroups": ["1"], 
+		"deliverToAll": false, 
+		"deliverImmediately": false, 
+		"scheduleDate": 0,
+		"skipComplainedCustomer": true
+	}
+}

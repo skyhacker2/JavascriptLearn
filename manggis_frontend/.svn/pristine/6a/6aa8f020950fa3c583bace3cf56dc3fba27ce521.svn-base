@@ -1,0 +1,19 @@
+<%
+var langResourceCommon = require('lang/{{G.LANG}}/common');
+var langResourceGroup = require('lang/{{G.LANG}}/group');
+%>
+
+<h1><%=isEdit ? langResourceGroup.label.editGroup : langResourceGroup.label.createGroup%></h1>
+<form id="edit-group-form">
+	<button type="submit" class="ajax-form-submit-helper"></button>
+	<div class="form-group">
+		<label for="edit-group-name"><%=langResourceCommon.label.name%> %{{mandatory}}%</label>
+		<input id="edit-group-name" class="form-control" name="name" maxlength="80" data-validator="mandatory name" data-rfl-keyup="keyupSubmit" type="text" value="<%==data.name || ''%>" />
+		<span class="help-block help-error"></span>
+	</div>
+	<div class="section-divider"></div>
+	<div>
+		<button type="button" class="btn btn-primary responsive" data-save-btn="save"><%=isEdit ? langResourceCommon.label.update : langResourceCommon.label.save%></button> 
+		<button type="button" class="btn btn-default responsive" data-cancel-btn="cancel"><%=langResourceCommon.label.cancel%></button> 
+	</div>
+</form>

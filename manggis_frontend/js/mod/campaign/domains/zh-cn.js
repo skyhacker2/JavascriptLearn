@@ -1,0 +1,11 @@
+﻿define([
+	"qq.com",
+	"163.com",
+	"sina.com",
+	"263.net",
+	"gmail.com",
+	"126.com",
+	"sohu.com",
+	"56.com",
+	"sogou.com"
+]);

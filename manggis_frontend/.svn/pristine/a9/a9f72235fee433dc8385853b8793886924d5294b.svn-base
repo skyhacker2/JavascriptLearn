@@ -1,0 +1,12 @@
+<div class="dropImage" style="width: 100%;" data-setter="setImg">
+	<%if(img){%>
+		<%=img%>
+		<p class="fix-btn" style="bottom:0px;width:100%"><a class="btn btn-primary" href="javascript:void(0);"><i class="icon-cloud-upload"></i> Upload</a>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="return false" class="edit"><i class="icon-link"></i> edit</a></p>
+		<div class="progress progress-striped active" style="display:none;position:absolute;bottom:50px;height:20px;width:100%"><div class="bar" style="width: 0%;"></div></div>
+	<%}else{%>
+		<%=defaultImg%>
+	<%}%>
+</div>
+<div style="padding:10px;" contenteditable="true" data-setter="setTxt">
+	<%=txt%>
+</div>

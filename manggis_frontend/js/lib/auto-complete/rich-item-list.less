@@ -1,0 +1,22 @@
+@import "mixins.less";
+
+.auto-complete-rich-box-list {
+	cursor: text;
+}
+.auto-complete-rich-item {
+	border: solid 1px #ccc;
+	line-height: 30px;
+	padding: 2px 6px;
+	margin: 2px 0 0 2px;
+	background-color: #f3f3f3;
+	display: inline-block;
+	cursor: default;
+	.border-radius(4px);
+}
+.auto-complete-rich-item.active {
+	border: solid 1px #888;
+}
+.auto-complete-rich-item .icon-remove {
+	cursor: pointer;
+	color: #888;
+}

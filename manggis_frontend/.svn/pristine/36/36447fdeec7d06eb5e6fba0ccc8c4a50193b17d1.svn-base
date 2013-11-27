@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="%{{_lang_}}%">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>${{user.label.manageUsers}}$ - ${{common.appName}}$</title>
+<!-- include "../inc/head.inc.html" -->
+</head>
+<body>
+<!-- include "../inc/body.inc.html" -->
+
+<!-- require "../../js/lang/%{{_lang_}}%/ad-remark" -->
+<!-- require "../../js/mod/ad-remark/list" -->
+<!-- require "../../js/mod/campaign/domains/%{{_lang_}}%" -->
+<script type="text/javascript">
+G.pageRequire(['../../js/mod/ad-remark/list', '../../js/mod/nav-bar/init', 'ajax!' + G.getAjaxLoadUrl('users/information')], function(main, navBar, auth) {
+	require(['rfl'], function(rfl) {
+		rfl.auth.init(auth, function() {
+			navBar.init('ad-remark');
+			if(rfl.auth.getData('currentGroup').superGroup) {
+				main.init();
+			} else {
+				rfl.ui.renderPageLoadError('#main-div');
+			}
+		});
+	});
+}, function() {
+	require(['rfl'], function(rfl) {
+		rfl.ui.renderPageLoadError('#main-div');
+	});
+});
+</script>
+</body>
+</html>

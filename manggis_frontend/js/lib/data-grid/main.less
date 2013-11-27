@@ -1,0 +1,201 @@
+// Variables
+@data-grid-border-color: #ccc;
+@gray-dark: #555;
+@font-size-base: 16px;
+@line-height-base: 1.625; // 26/16
+@line-height-computed: floor(@font-size-base * @line-height-base); // ~20px
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		// Fixes Opera/contenteditable bug:
+		// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Opacity
+.opacity(@opacity) {
+	opacity: @opacity / 100;
+	filter: ~"alpha(opacity=@{opacity})";
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+     -moz-transition-delay: @transition-delay;
+       -o-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+     -moz-transition-duration: @transition-duration;
+       -o-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+
+// Border Radius
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Single Corner Border Radius
+.border-top-left-radius(@radius) {
+	-webkit-border-top-left-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	border-top-left-radius: @radius;
+}
+.border-top-right-radius(@radius) {
+	-webkit-border-top-right-radius: @radius;
+	-moz-border-radius-topright: @radius;
+	border-top-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius) {
+	-webkit-border-bottom-right-radius: @radius;
+	-moz-border-radius-bottomright: @radius;
+	border-bottom-right-radius: @radius;
+}
+.border-bottom-left-radius(@radius) {
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+//
+// Data Grid
+//
+.data-grid {
+	.clearfix();
+	border: solid 1px @data-grid-border-color;
+	margin-bottom: 20px;
+	.border-radius(5px);
+}
+
+.data-grid-locked table {
+	table-layout: fixed;
+	th, td {
+		line-height: @line-height-computed;
+	}
+	td i[class^="icon"] {
+		font-size: @font-size-base * 1.25;
+	}
+}
+
+.data-grid .data-grid-header, .data-grid .data-grid-body {
+	overflow: hidden;
+}
+
+.data-grid-table th {
+	text-align: left;
+}
+.data-grid-table td {
+	background-color: #fff;
+}
+
+.data-grid-cell-inner {
+	line-height: @font-size-base * 1.2;
+	font-size: @font-size-base;
+	padding: 12px 10px;
+}
+
+// Bordered
+.data-grid-bordered .data-grid-cell-inner {
+	border-bottom: solid 1px @data-grid-border-color;
+	border-right: solid 1px @data-grid-border-color;
+}
+.data-grid-bordered th .data-grid-cell-inner {
+	border-bottom-width: 2px;
+}
+.data-grid-bordered .data-grid-last-row .data-grid-cell-inner {
+	border-bottom: none;
+}
+
+.data-grid-bordered .data-grid-last-cell .data-grid-cell-inner {
+	border-right: none;
+}
+
+// Locked
+.data-grid-locked .data-grid-cell-inner {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: @font-size-base * 1.2 + 24;
+}
+
+.data-grid-locked-columns {
+	border-right: solid 2px @data-grid-border-color;
+}
+.data-grid-locked-columns .data-grid-body {
+	 .border-bottom-left-radius(5px);
+}
+
+// Striped
+.data-grid-striped .data-grid-table .data-grid-row-odd td {
+	background-color: #f3f3f3;
+}
+
+// Sortable
+.data-grid-sortable, .data-grid-sortable:hover {
+	color: @gray-dark;
+	text-decoration: underline;
+}
+.data-grid-sort-arrow-down, .data-grid-sort-arrow-up {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+	margin-left: 3px;
+}
+.data-grid-sort-arrow-down {
+	border-top: 4px solid @gray-dark;
+}
+.data-grid-sort-arrow-up {
+	border-bottom: 4px solid @gray-dark;
+}
+
+// Hightlight
+.data-grid .data-grid-table .data-grid-row-hl td {
+	background-color: #ffffee;
+}
+.data-grid .data-grid-table .data-grid-row-error td {
+	background-color: #f2dede;
+}
+.data-grid .data-grid-table .data-grid-row-error.data-grid-row-hl td {
+	background-color: #ebcccc;
+}
+
+// Sequence
+.data-grid .data-grid-table .data-grid-sequence-cell {
+	background-color: #fff !important;
+	border-bottom: none;
+	font-weight: bold;
+	color: #888;
+}
+.data-grid-sequence-cell .data-grid-cell-inner {
+	border-bottom: none;
+	text-overflow: clip;
+}
+
+// Checkbox
+.data-grid-checkbox-cell .data-grid-cell-inner {
+	text-overflow: clip;
+}

@@ -1,0 +1,29 @@
+<%
+var langResourceCommon = require('lang/{{G.LANG}}/common');
+var langResourceUser = require('lang/{{G.LANG}}/user');
+%>
+
+<%
+$opt = $opt || {};
+for(var i = 0; i < list.length; i++) {
+	var item = list[i];
+%>
+	<li>
+		<span class="parent"><a class="text-gray" href="javascript:void(0);" onclick="return false;" data-rfl-click="remove <%=item.id%>"><i class="icon-remove"></i><%=item.name%></a></span>
+		<ul>
+			<li data-rfl-cancel-bubble="click">
+				<%if(item.roles && item.roles.length) {%>
+					<span data-rfl-click="selectRoleUnderGroup <%=item.id%>" class="cursor-pointer" title="<%=langResourceUser.label.clickSelectRoles%>" data-toggle="tooltip">
+						<i class="icon-pencil"></i>
+						<%for(var j = 0; j < item.roles.length; j++) {
+							var role = item.roles[j];%>
+							<%=role.name%>; 
+						<%}%>
+					</span>
+				<%} else {%>
+					<a href="javascript:void(0);" onclick="return false;" data-rfl-click="selectRoleUnderGroup <%=item.id%>"><i class="icon-pencil"></i><%=langResourceUser.label.clickSelectRoles%></a>
+				<%}%>
+			</li>
+		</ul>
+	</li>
+<%}%>

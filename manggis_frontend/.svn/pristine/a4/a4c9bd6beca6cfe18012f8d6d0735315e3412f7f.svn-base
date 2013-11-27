@@ -1,0 +1,29 @@
+{
+	"code" : 0,
+	"message" : "Operation has been executed successfully.",
+	"data" : {
+		"adRemark": {
+			"id" : "5203672930045fd51a6e4cb1",
+			"domain" : "163.com",
+			"remark" : "[AD]"
+		},
+		"pageNumber" : 0,
+		"pageSize" : 15,
+		"direction" : null,
+		"property" : null,
+		"total" : 600,
+		"adRemarks" : [
+			{
+				"id" : "1",
+				"domains" : ["vip.163.com", "163.com"],
+				"remark" : "[AD]"
+			},
+			{
+				"id" : "2",
+				"domains" : ["qq.com"],
+				"remark" : "[AD]"
+			}
+		],
+		"totalPages" : 2
+	}
+}

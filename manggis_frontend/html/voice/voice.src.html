@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="%{{_lang_}}%">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>${{common.label.list}}$ - ${{common.appName}}$</title>
+<!-- include "../inc/head.inc.html" -->
+<script type="text/javascript">
+document.write('<link rel="stylesheet" href="css/mod/customer/list-main.css" />');
+</script>
+</head>
+<body>
+<!-- include "../inc/body.inc.html" -->
+
+<!-- require "../../js/lang/%{{_lang_}}%/customer" -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/annyang/0.2.0/annyang.min.js"></script>
+<script type="text/javascript">
+if (annyang) {
+  var commands = {
+    /*'*txt': function (txt) {
+      alert(txt);
+    }*/
+    'create campaign': function () {
+      location.href = G.ORIGIN + G.BASE + 'html/campaign/edit-en.html#!create/eyJsaXN0SWQiOiIxIiwibGlzdE5hbWUiOiJEQiBQb29sIn0/campaign//listId';
+    },
+    'manage campaign': function () {
+      location.href = G.ORIGIN + G.BASE + 'html/campaign/list-en.html#!1';
+    }
+  };
+
+  annyang.init(commands);
+
+  annyang.start();
+}
+</script>
+<script type="text/javascript">
+;(function() {
+  var langResourceCommon = require('../../lang/' + G.LANG + '/common');
+  var params = G.getAjaxHistoryParams();
+  var listId = params[0];
+
+  G.pageRequire(['../../js/mod/nav-bar/init', 'ajax!' + G.getAjaxLoadUrl('users/information'), 'ajax!' + G.getAjaxLoadUrl(listId ? 'lists/' + listId + '/overview' : 'lists')], function(navBar, auth, res) {
+    require(['rfl'], function(rfl) {
+      rfl.ajax.hideLoading();
+      rfl.auth.init(auth, function() {
+        var listsLen;
+        navBar.init('list');
+      });
+    });
+  }, function() {
+    require(['rfl'], function(rfl) {
+      rfl.ui.renderPageLoadError('#main-div');
+    });
+  });
+})();
+</body>
+</html>

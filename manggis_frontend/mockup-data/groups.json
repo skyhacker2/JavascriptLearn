@@ -1,0 +1,32 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"group": {
+			"id": 2,
+			"name": "List Manager",
+			"enabled": true,
+			"superGroup": false
+		},
+		"groups": [
+			{
+				"id": 1,
+				"name": "Admin",
+				"enabled": true,
+				"superGroup": true
+			},
+			{
+				"id": 2,
+				"name": "List Manager",
+				"enabled": false,
+				"superGroup": false
+			},
+			{
+				"id": 3,
+				"name": "Campaign Manager",
+				"enabled": true,
+				"superGroup": false
+			}
+		]
+	}
+}

@@ -1,0 +1,18 @@
+<%if(data.property.items && data.property.items.length) {%>
+	<div class="form-group">
+		<label for="edit-property-set-value-0"><%=lang.customer.label.editValues%></label>
+		<div id="existing-property-set-div">
+			<%for(var i = 0; i < data.property.items.length; i++) {%>
+				<div class="form-group form-inline">
+					<input id="edit-property-set-value-<%=i%>" class="form-control" maxlength="80" type="text" value="<%==data.property.items[i].value%>" data-id="<%=data.property.items[i].id%>" data-validator="mandatory name" data-rfl-keyup="keyupSubmit" style="width: 300px;" /> 
+					<!--
+					<a href="javascript:void(0);" class="text-gray" data-rfl-click="setItemUp <%=i%>"><i class="icon-arrow-up"></i></a> 
+					<a href="javascript:void(0);" class="text-gray" data-rfl-click="setItemDown <%=i%>"><i class="icon-arrow-down"></i></a> 
+					-->
+					<a href="javascript:void(0);" class="text-gray" data-rfl-click="setItemDelete <%=i%>"><i class="icon-remove"></i></a> 
+					<span class="help-inline help-error"></span>
+				</div>
+			<%}%>
+		</div>
+	</div>
+<%}%>

@@ -1,0 +1,4 @@
+@theme-sea-color: #3bb0c6;
+@theme-color: @theme-sea-color;
+
+@link-color: lighten(@theme-color, 10%);

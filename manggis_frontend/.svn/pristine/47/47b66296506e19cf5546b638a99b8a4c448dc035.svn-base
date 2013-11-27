@@ -1,0 +1,10 @@
+{
+  "code" : 0,
+  "message" : "Operation has been executed successfully.",
+  "data" : {
+	"name": "Good News!",
+    "html" : "<html><head></head><body><a href=\"http://www.google.com.hk\">aaa</a><a href=\"http://www.javaeye.com\">javaeye</a></body></html>",
+    "config" : "",
+    "contentEditor" : 0
+  }
+}

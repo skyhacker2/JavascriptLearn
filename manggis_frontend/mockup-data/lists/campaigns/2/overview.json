@@ -1,0 +1,26 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"id": "2",
+		"status": "PENDING",
+		"name": "Hello World!",
+		"createTime": 1371108472853,
+		"campaign": {
+			"contentEditor": 1,
+			"subject": "Good News!",
+			"fromName": "Gary Wang",
+			"fromEmail": "gary.wang@radicasys.com",
+			"replyToName": "Ocean Yang",
+			"replyToEmail": "ocean.yang@radicasys.com"
+		},
+		"htmlDefined": true,
+		"plainTextDefined": true,
+		"delivery": {
+			"customerGroups": ["Vip Customer", "Customer Group A"], 
+			"deliverToAll": false, 
+			"deliverImmediately": true, 
+			"scheduleDate": 1372307773616
+		}
+	}
+}

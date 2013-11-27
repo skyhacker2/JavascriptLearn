@@ -1,0 +1,188 @@
+<%
+var rfl = require('rfl');
+%>
+
+<h1>Match the file columns with your customer propertys...</h1>
+<div id="match-notice">
+	<!-- include "./import-match-column-notice.tpl.html" -->
+</div>
+<div class="match-column-wrapper">
+	<table class="table">
+		<tr>
+			<%for(var i = 0, l = columns.length; i < l; i++) {
+				var column = columns[i];
+			%>
+				<th id="column-<%=i%>-th" data-column-index="<%=i%>" class="<%=column.matched ? (column.header == column.matched.name || column.matched.userSelection ? 'matched' : 'recommanded') : column.skipped ? 'skipped' : 'follow-up'%>">
+					<div class="th-header" title="<%=column.header || 'Column ' + (column.columnIndex + 1)%>">
+						<strong><%=column.header || 'Column ' + (column.columnIndex + 1)%></strong>
+					</div>
+					<div class="th-wrapper">
+						<div class="th-inner">
+							<div data-type="header" class="form-inline">
+								<label class="mockup-radio-label">
+									<label class="mockup-radio on">
+										<input type="radio" name="column-<%=i%>-type" value="M" checked="checked" data-rfl-click="switchColumnType" />
+										<span><i></i></span>
+									</label>
+									<span>Match</span>
+								</label> 
+								<label class="mockup-radio-label">
+									<label class="mockup-radio">
+										<input type="radio" name="column-<%=i%>-type" value="S" data-rfl-click="switchColumnType" />
+										<span><i></i></span>
+									</label>
+									<span>Skip</span>
+								</label>
+							</div>
+							<div data-type="content">
+								<div data-type="match-form">
+									<div class="form-group <%=column.matched ? '' : 'error'%>">
+										<label for="column-<%=i%>-matched-name">Belongs to</label>
+										<input data-type="matched-name-input" id="column-<%=i%>-matched-name" class="form-control" type="text" value="<%=column.matched ? column.matched.name : ''%>" data-validator="mandatory" />
+										<span class="help-block help-error"></span>
+									</div>
+									<div class="new-property-link">
+										or <a class="text-gray" href="javascript:void(0);" onclick="return false;" data-rfl-click="createProperty">create a new property <i class="icon-plus"></i></a>
+									</div>
+								</div>
+								<div data-type="new-form" class="display-none">
+									<h4 class="text-gray">Create a new property</h4>
+									<div class="form-group">
+										<label for="column-<%=i%>-data-type">Data Type</label>
+										<select id="column-<%=i%>-data-type" class="form-control" onchange="require('mod/customer/import-match-column-main').switchDataType(this);">
+											<%for(var p in lang.propertyTypes.names) {
+												if(!rfl.config.BASIC_PROPERTY_TYPE[p]) {%>
+												
+													<option value="<%=p%>"><%=lang.propertyTypes.names[p]%></option>
+												<%}
+											}%>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="column-<%=i%>-property-name">Name</label>
+										<input id="column-<%=i%>-property-name" class="form-control" maxlength="80" type="text" value="" data-validator="mandatory name" />
+										<span class="help-block help-error"></span>
+									</div>
+									<div data-type="set-values" class="form-group display-none">
+										<label for="column-<%=i%>-set-values">Set Values</label>
+										<div class="place-holder-wrapper">
+											<div class="place-holder-text">
+												This is a value<br />
+												This is another value<br />
+												One value per line. The third value
+											</div>
+											<textarea name="itemNames" class="form-control" data-type="set-values-input" id="column-<%=i%>-set-values" data-validator="mandatory set"></textarea>
+											<span class="help-block help-error"></span>
+										</div>
+									</div>
+									<div class="text-right">
+										<button class="btn btn-sm btn-default" data-rfl-click="saveProperty">Add</button> or <a class="text-gray" href="javascript:void(0);" onclick="return false;" data-rfl-click="cancelCreateProperty">cancel</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</th>
+			<%}%>
+			<th class="last">
+				<div class="th-wrapper"><div class="th-inner"></div></div>
+			</th>
+		</tr>
+		<%for(var i = 0, l = rows.length; i < l; i++) {
+			var row = rows[i];
+		%>
+			<tr>
+				<%for(var j = 0, l2 = row.length; j < l2; j++) {%>
+					<td data-column-index="<%=j%>"><%==row[j]%></td>
+				<%}%>
+				<td class="last"></td>
+			</tr>
+		<%}%>
+	</table>
+</div>
+<div class="section-divider"></div>
+
+<div class="conflictions">
+	<h2>How do you want to resolve conflictions</h2>
+	<div class="section-sm form-group">
+		<h3>When manggis ID or external ID already exists in DB.</h3>
+		<div data-validate-type="radio" data-validator="mandatory">
+			<label class="mockup-radio-label">
+				<label class="mockup-radio">
+					<input type="radio" name="idConflict" value="8" />
+					<span><i></i></span>
+				</label>
+				<span>Skip</span>
+			</label> 
+			<label class="mockup-radio-label">
+				<label class="mockup-radio">
+					<input type="radio" name="idConflict" value="9" />
+					<span><i></i></span>
+				</label>
+				<span>Merge</span>
+			</label>
+		</div>
+		<span class="help-block help-error"></span>
+	</div>
+	<div class="section-sm form-group">
+		<h3>When email or mobile already exists in DB.</h3>
+		<div data-validate-type="radio" data-validator="mandatory">
+			<label class="mockup-radio-label">
+				<label class="mockup-radio">
+					<input type="radio" name="contactConflict" value="1" />
+					<span><i></i></span>
+				</label>
+				<span>Skip</span>
+			</label> 
+			<label class="mockup-radio-label">
+				<label class="mockup-radio">
+					<input type="radio" name="contactConflict" value="2" />
+					<span><i></i></span>
+				</label>
+				<span>Merge</span>
+			</label> 
+			<label class="mockup-radio-label">
+				<label class="mockup-radio">
+					<input type="radio" name="contactConflict" value="3" />
+					<span><i></i></span>
+				</label>
+				<span>Create New</span>
+			</label>
+		</div>
+		<span class="help-block help-error"></span>
+	</div>
+</div>
+<div class="section-divider"></div>
+
+<div>
+	<label class="mockup-checkbox-label">
+		<label class="mockup-checkbox">
+			<input name="selectActionSet" type="checkbox" /><span><i class="icon-ok"></i></span>
+		</label>
+		<span>Select action set</span>
+	</label>
+	<div id="action-set-section" class="section hidden"></div>
+	<div class="section-divider"></div>
+</div>
+
+<div>
+	<label class="mockup-checkbox-label">
+		<label class="mockup-checkbox">
+			<input name="createCampaign" type="checkbox" /><span><i class="icon-ok"></i></span>
+		</label>
+		<span>Create one time campaign for these customers</span>
+	</label>
+	<div id="create-campaign-section" class="section-sm hidden">
+		<div class="form-group">
+			<label for="edit-campaign-name">Campaign Name %{{mandatory}}%</label>
+			<input id="edit-campaign-name" class="form-control" name="campaignName" maxlength="80" data-validator="mandatory name" type="text" />
+			<span class="help-block help-error"></span>
+		</div>
+	</div>
+	<div class="section-divider"></div>
+</div>
+
+<div style="margin-bottom: 140px;">
+	<button onclick="return false;" class="btn btn-primary responsive" data-rfl-click="finishImport">Finish importing customers</button> 
+	<a class="btn btn-default responsive"  href="html/customer/list-<%=G.LANG%>.html#!<%=listId%>"><%=lang.common.label.cancel%></a>
+</div>

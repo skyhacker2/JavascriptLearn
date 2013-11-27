@@ -1,0 +1,26 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"campaigns": [
+			{
+				"id": "1",
+				"status": "DRAFT",
+				"name": "Happy new year!",
+				"createTime": 1371108472853
+			},
+			{
+				"id": "2",
+				"status": "DRAFT",
+				"name": "Hello World!",
+				"createTime": 1371108472853
+			},
+			{
+				"id": "3",
+				"status": "DRAFT",
+				"name": "Welcome to Radica!",
+				"createTime": 1371108472853
+			}
+		]
+	}
+}

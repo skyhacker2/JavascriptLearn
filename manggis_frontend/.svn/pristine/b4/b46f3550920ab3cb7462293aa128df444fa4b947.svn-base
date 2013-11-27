@@ -1,0 +1,121 @@
+#preview-close{
+	color: #ffffff;
+	text-decoration: none;
+}
+#preview-close:link{
+	color: #ffffff;
+	text-decoration: none;
+}
+#preview-close:hover{
+	color: #000000;
+	text-decoration: none;
+}
+#edit-to:link{
+	text-decoration: none;
+}
+#edit-to:hover{
+	text-decoration: none;
+}
+#preview-container{
+	margin-top: 40px;
+	margin-bottom: 1%;
+	width: 100%;
+	height: 96%;
+	position: fixed;
+	z-index: 1500;
+	top: 0px;
+	left: 0px;
+}
+#preview-header{
+	padding: 10px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	box-shadow: inset 0 1px 2px #999;
+	-moz-box-shadow: inset 0 1px 2px #999;
+	-webkit-box-shadow: inset 0 2px 1px #999;
+	background: #fff;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f5f5f5));
+	background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: -ms-lineaR-gradient(top, #ffffff, #f5f5f5);
+	background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: linear-gradient(top, #ffffff, #f5f5f5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f5f5f5');
+}
+#preview-header > li{
+	border-bottom: 1px dashed #cdcdcd;
+	list-style: none;
+	list-style-position: inside;
+	padding: 5px 0 5px 25px;
+}
+#preview-iframe{
+	width: 100%;
+	overflow: hidden;
+	width: 2000px;
+	margin-left: -550px;
+	border: 0;
+}
+#mobile-iframe{
+	width: 320px;
+	border: 0;
+	margin-top: 123px;
+	height: 568px;
+	margin-left: 43px;
+}
+#preview-tool{
+	width: 100%;
+	height: 50px;
+	background: #f3f3f3;
+	position: fixed;
+	top: 0px;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1500;
+}
+#edit-groups-container{
+	display: inline;
+}
+.mCSB_container{
+	min-height: 400px;
+}
+#desktop-view{
+	margin-top: 10px;
+}
+#mobile-view{
+	background: url(img/mod/campaign/iphone.png) no-repeat 0 0;
+	background: url(../../img/mod/campaign/iphone.png) no-repeat 0 0\9;
+	width: 405px;
+	height: 815px;
+	margin: 10px auto 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+}
+.rotate-mobile{
+	margin-top: -150px !important;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+.rotate-mobile #mobile-iframe{
+	width: 568px;
+	height: 320px;
+	margin-top: 248px;
+	margin-left: -82px;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	transform:rotate(90deg);
+}
+#desktop-button{
+	display: inline-block;
+}
+
+.popover.in{
+	z-index: 1500;
+}

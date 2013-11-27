@@ -1,0 +1,8 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"name": "Good News!",
+		"plainText": "This is the plain text."
+	}
+}

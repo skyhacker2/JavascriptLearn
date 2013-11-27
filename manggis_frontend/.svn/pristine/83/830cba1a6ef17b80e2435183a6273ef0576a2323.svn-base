@@ -1,0 +1,64 @@
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%==data.name%></span>
+		<div class="top">
+			<ul class="header-actions">
+				<li class="dropdown">
+					<a href="javascript:void(0);"><i class="icon-envelope-alt"></i> <span>Preview &amp; Test</span> <i class="icon-caret-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" data-rfl-click="previewUploadedContent">Preview HTML content</a></li>
+						<li><a href="javascript:void(0);" data-rfl-click="uploadSendSample">Send yourself a test email</a></li>
+						<li><a href="javascript:void(0);" data-rfl-click="viewSpamRating">View spam rating</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="header-tabs">
+				<li><a href="javascript:void(0);" data-rfl-click="switchCampaignContentTab 1"><i class="icon-columns"></i> Design View</a></li>
+				<li><a href="javascript:void(0);" data-rfl-click="switchCampaignContentTab 2"><i class="icon-code"></i> Code View</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content">
+		<div class="ckeditor-wrapper display-none">
+			<textarea name="ckeditor" class="display-none"></textarea>
+		</div>
+
+		<div class="codemirror-wrapper display-none">
+			<div class="tool-bar">
+				<ul class="ri-tool-bar">
+					<li title="Insert Customer Property" data-rfl-click="codeInsertCustomerProperty"><span class="cke_button__insertpersonalizedinformation_icon">Insert Customer Property</span></li>
+					<li title="Insert Linkage" data-rfl-click="codeInsertLinkage"><span class="cke_button__insertrilink_icon">Insert Linkage</span></li>
+				</ul>
+			</div>
+			<div class="codemirror-container">
+				<div class="ajax-loading-s"></div>
+				<textarea class="display-none"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<button class="btn btn-default pull-left" data-rfl-click="saveUploadedCode campaign"><i class="icon-arrow-left"></i> Previous</button> 
+		<ul class="steps">
+			<li><a href="javascript:void(0);" data-rfl-click="saveUploadedCode campaign"><span>Setup</span></a></li>
+			<li class="active dropdown">
+				<a href="javascript:void(0);">
+					<span>
+						Design <i class="icon-caret-down"></i>
+					</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:void(0);" data-rfl-click="saveUploadedCode content-select-type">Upload a new design or use our builder</a></li>
+					<li><a href="javascript:void(0);" data-rfl-click="saveUploadedCode content-define-urls">Define &amp; Validate Urls</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:void(0);" data-rfl-click="saveUploadedCode content-plain-text"><span>Plain Text</span></a></li>
+			<li><a href="javascript:void(0);" data-rfl-click="saveUploadedCode overview"><span>Confirm</span></a></li>
+		</ul>
+		<button class="btn btn-primary pull-right" data-rfl-click="saveUploadedCode content-plain-text">Next <i class="icon-arrow-right"></i></button> 
+	</div>
+</div>

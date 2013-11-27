@@ -1,0 +1,267 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"total": 100,
+		"groupName": "Vip Customer",
+		"customers": [
+			{
+				"id": "1",
+				"property": {
+					"1": "gary.wang@radicasys.com",
+					"2": "Gary",
+					"3": "Wang",
+					"4": "Gary",
+					"5": 30,
+					"6": "Male",
+					"11": "UK",
+					"13": "Fan Shen Road, Bao An District, Shen Zhen City, Guang Dong Province, China",
+					"14": "2013/3/27"
+				}
+			},
+			{
+				"id": "2",
+				"property": {
+					"1": "ocean.yang@radicasys.com",
+					"2": "Ocean",
+					"3": "Yang",
+					"6": "Male"
+				}
+			},
+			{
+				"id": "3",
+				"property": {
+					"1": "daniel.yang@radicasys.com",
+					"2": "Daniel",
+					"3": "Yang",
+					"6": "Male"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "Female"
+				}
+			}
+		]
+	}
+}

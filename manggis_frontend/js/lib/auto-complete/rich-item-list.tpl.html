@@ -1,0 +1,18 @@
+<!-- include "./rich-item-list.less" -->
+
+<div class="auto-complete-rich-box-list">
+<%
+var getStdItem = $opt.getStdItem;
+var getRichItemText = $opt.getRichItemText;
+for(var i = 0, l = list.length; i < l; i++) {
+	var item = list[i];
+	var stdItem = getStdItem ? getStdItem(item, 'RICH_BOX') : item;
+%>
+	<span data-id="<%=stdItem.id%>" class="auto-complete-rich-item">
+		<%==getRichItemText ? getRichItemText(item, stdItem) : stdItem.name%> 
+		<i class="icon-remove"></i>
+	</span>
+<%
+}
+%>
+</div>

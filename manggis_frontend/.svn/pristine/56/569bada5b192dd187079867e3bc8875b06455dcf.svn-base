@@ -1,0 +1,26 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"score": "6.1",
+		"thresholdScore": "5.0",
+		"spamFlag": true,
+		"reasons": [
+			{
+				"level": 1,
+				"ruleName": "XXX_DSAFSD",
+				"reason": "e-mail did not awesome!"
+			},
+			{
+				"level": 2,
+				"ruleName": "DSAFSD",
+				"reason": "Subject line is too short!"
+			},
+			{
+				"level": 3,
+				"ruleName": "FEFD_DSAFSD",
+				"reason": "Subject line is too long!"
+			}
+		]
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"list": {
+			"id": 1,
+			"name": "DB Pool",
+			"customers": 0
+		},
+		"lists": [
+			{
+				"id": 1,
+				"name": "DB Pool",
+				"customers": 2432
+			},
+			{
+				"id": 2,
+				"name": "DB Pool 2",
+				"customers": 0
+			}
+		]
+	}
+}

@@ -1,0 +1,20 @@
+<!-- include "./search.less" -->
+<div class="app-search-box">
+	<div class="input-group">
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span id="smart-search-current-type"><%=currentType.displayName%></span> <span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu">
+				<%for(var i = 0; i < types.length; i++) {
+					var item = types[i];%>
+					<li><a href="javascript:void(0);" data-rfl-click="appSearchSwitchType <%=i%>"><%=item.displayName%></a></li>
+				<%}%>
+			</ul>
+		</div>
+		<input id="app-search-box-input" class="form-control" type="text" data-rfl-keyup="keyupAppSearch" />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" data-rfl-click="appSearch"><i class="icon-search"></i></button>
+		</span>
+	</div>
+	<i class="icon-remove-sign" data-rfl-click="appSearchClear"></i>
+</div>
+<div class="app-search-result"></div>

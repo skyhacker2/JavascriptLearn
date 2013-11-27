@@ -1,0 +1,18 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Status</th>
+			<th>Name</th>
+			<th>Click Rate</th>
+			<th>Bounce Rate</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><%=status%></td>
+			<td><%=name%></td>
+			<td><%=(typeof clickRate !== "undefined") ? clickRate : "0.00"%></td>
+			<td><%=(typeof bounceRate !== "undefined") ? bounceRate : "0.00"%></td>
+		</tr>
+	</tbody>
+</table>

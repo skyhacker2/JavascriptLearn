@@ -1,0 +1,10 @@
+<table class="table table-responsive <%=G.IS_PC ? 'table-hover' : ''%>">
+	<tbody>
+	<%for(var i = 0; i < list.length; i++) {
+		var item = list[i];%>
+		<tr>
+			<td><a href="javascript:void(0);" data-rfl-click="appSearchViewCampaign <%=item.id%>"><%==item.name%></a></td>
+		</tr>
+	<%}%>
+	</tbody>
+</table>

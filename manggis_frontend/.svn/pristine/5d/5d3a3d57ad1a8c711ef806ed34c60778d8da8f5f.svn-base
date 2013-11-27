@@ -1,0 +1,6 @@
+<div>
+	<p>
+		Hyperlink: &nbsp;&nbsp;<input type="text" placeholder="http://..." id="hyperlink" name="hyperlink"/>
+	</p>
+	<div class="alert-container" id="upload-picture-form"></div>
+</div>

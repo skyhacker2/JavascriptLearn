@@ -1,0 +1,2 @@
+<h1><%=lang.customer.label.manageCustomerGroups%></h1>
+<div id="group-map-container"></div>

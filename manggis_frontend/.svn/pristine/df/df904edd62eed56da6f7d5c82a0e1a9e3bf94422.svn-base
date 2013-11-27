@@ -1,0 +1,4 @@
+@theme-green-color: #117500;
+@theme-color: @theme-green-color;
+
+@link-color: lighten(@theme-color, 10%);

@@ -1,0 +1,4 @@
+@theme-purple-color: #7951a3;
+@theme-color: @theme-purple-color;
+
+@link-color: lighten(@theme-color, 10%);

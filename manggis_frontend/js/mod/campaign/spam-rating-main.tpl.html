@@ -1,0 +1,25 @@
+<div class="spam-rating <%=data.spamFlag ? 'text-warning' : 'text-success'%>">
+	<div id="gauge" style="width: 300px; height: 150px; margin: auto;"></div>
+	<%if(data.spamFlag) {%>
+		Your message is of possibility to be classified as SPAM.
+	<%} else {%>
+		Your message is of low possibility to be classified as SPAM.
+	<%}%>
+	<p class="desc">
+		The higher the score, the higher the possibility your message will be classified as SPAM.
+	</p>
+	<div class="reasons">
+		<%for(var i = 0; i < data.reasons.length; i++){%>
+			<div class="clearfix">
+				<div class="span-level text-error">
+					<%for(var j = 0; j < data.reasons[i].level; j++){%>
+					<i class="icon-flag"></i>
+					<%}%>
+				</div>
+				<div class="span-text text-error">
+					<%=data.reasons[i].reason%>
+				</div>
+			</div>
+		<%}%>
+	</div>
+</div>

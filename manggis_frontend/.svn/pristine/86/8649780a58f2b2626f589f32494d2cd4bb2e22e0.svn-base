@@ -1,0 +1,26 @@
+<style>
+	.typeahead .dropdown-menu {
+		z-index: 1051;
+	}
+</style>
+<div id="send-sample-form">
+	<p class="desc">
+		Please input one or mutiple emails seperated by semicolon.
+	</p>
+	<div class="form-group">
+		<label for="send-sample-emails">Send to Emails %{{mandatory}}%</label>
+		<textarea id="send-sample-emails" class="form-control" name="sendSampleEmails" maxlength="900" data-validator="mandatory emailList" data-rfl-keyup="sendSampleKeyupSubmit" rows="3"></textarea>
+		<span class="help-block help-error"></span>
+	</div>
+
+	<h3 class="section-sm">Personalization</h3>
+
+	<p class="desc">
+		You may specify a customer to personalize this campaign, or else the system will select a customer from the list randomly.
+	</p>
+	<div class="form-group">
+		<label for="send-sample-customer">Customer</label>
+		<input id="send-sample-customer" class="form-control" name="sendSampleCustomer" maxlength="180" type="text" value="" data-rfl-keyup="sendSampleKeyupSubmit" />
+		<span class="help-block help-error"></span>
+	</div>
+</div>

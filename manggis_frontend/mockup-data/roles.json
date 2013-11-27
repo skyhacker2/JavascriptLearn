@@ -1,0 +1,63 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"role": {
+			"id": 2,
+			"name": "List Manager",
+			"desc": "List Manager",
+			"superRole": false,
+			"permissionIds": ["1", "2", "3", "4"]
+		},
+		"roles": [
+			{
+				"id": 1,
+				"name": "Admin",
+				"description": "Admin",
+				"superRole": true
+			},
+			{
+				"id": 2,
+				"name": "List Manager",
+				"description": "List Manager",
+				"superRole": false
+			},
+			{
+				"id": 3,
+				"name": "Campaign Manager",
+				"description": "Campaign Manager",
+				"superRole": false
+			},
+			{
+				"id": 4,
+				"name": "User Manager",
+				"description": "User Manager",
+				"superRole": false
+			},
+			{
+				"id": 5,
+				"name": "Role Manager",
+				"description": "Role Manager",
+				"superRole": false
+			},
+			{
+				"id": 6,
+				"name": "Group Manager",
+				"description": "Group Manager",
+				"superRole": false
+			},
+			{
+				"id": 7,
+				"name": "Customer Manager",
+				"description": "Customer Manager",
+				"superRole": false
+			},
+			{
+				"id": 8,
+				"name": "Super Manager",
+				"description": "Super Manager",
+				"superRole": false
+			}
+		]
+	}
+}

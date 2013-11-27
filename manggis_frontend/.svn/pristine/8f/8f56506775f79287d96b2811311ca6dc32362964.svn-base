@@ -1,0 +1,7 @@
+// Buttons
+// -------------------------
+@link-color: lighten(@theme-color, 10%);
+@link-hover-color: darken(@link-color, 15%);
+@btn-primary-bg: @link-color;
+@dropdown-link-hover-bg: @link-color;
+@dropdown-link-active-bg: @link-color;

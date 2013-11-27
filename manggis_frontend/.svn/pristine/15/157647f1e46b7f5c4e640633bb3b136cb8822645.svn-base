@@ -1,0 +1,8 @@
+{
+	"code": 0,
+	"message": "Duplicate campaign successfully!",
+	"data": {
+		"id": "1",
+		"contentType": "upload"
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"listName": "DB Pool 2",
+		"totalCustomers": 0,
+		"jobs": [
+			{
+				"id": "1",
+				"status": "completed",
+				"progress": 100,
+				"timeStart": "2013-05-30 11:24",
+				"timeComplete": "2013-05-30 11:24",
+				"info": {
+					"added": 23,
+					"notAdded": 23
+				}
+			},
+			{
+				"id": "2",
+				"status": "inprogress",
+				"progress": 50,
+				"timeStart": "2013-05-30 11:24",
+				"timeComplete": "",
+				"info": {
+					"added": 0,
+					"notAdded": 0
+				}
+			},
+			{
+				"id": "3",
+				"status": "completed",
+				"progress": 100,
+				"timeStart": "2013-05-30 11:24",
+				"timeComplete": "2013-05-30 11:24",
+				"info": {
+					"added": 23,
+					"notAdded": 0
+				}
+			}
+		]
+	}
+}

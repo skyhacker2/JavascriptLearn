@@ -1,0 +1,14 @@
+{
+	"request": {
+		"method": "put",
+		"body": {
+			"type": 1,
+			"row": 1,
+			"customerId": "1"
+		},
+		"remark": "type: 1 - email, 2 - mobile"
+	},
+	"code": 0,
+	"message": "ok",
+	"data": {}
+}

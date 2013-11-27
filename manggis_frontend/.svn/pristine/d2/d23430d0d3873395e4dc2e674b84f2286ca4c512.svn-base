@@ -1,0 +1,26 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"customers": [
+			{
+				"id": "1",
+				"email": "gary.wang@radicasys.com",
+				"firstName": "Gary",
+				"lastName": "Wang"
+			},
+			{
+				"id": "2",
+				"email": "ocean.yang@radicasys.com",
+				"firstName": "Ocean",
+				"lastName": "Yang"
+			},
+			{
+				"id": "3",
+				"email": "iverson.he@radicasys.com",
+				"firstName": "Iverson",
+				"lastName": "He"
+			}
+		]
+	}
+}

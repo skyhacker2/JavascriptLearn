@@ -1,0 +1,214 @@
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%==data.name%></span>
+		<ul class="header-actions">
+		</ul>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content">
+		<div class="overview">
+			<%
+				var customizedReplyTo = data.campaign.fromName != data.campaign.replyToName || data.campaign.fromEmail != data.campaign.replyToEmail;
+			%>
+			<%if(editable) {%>
+				<%if(readyToDeliver) {%>
+					<h1>You're all set to send!</h1>
+					<p class="text-center">Review the feedback below before sending your campaign.</p>
+				<%} else {%>
+					<h1>You must complete all the parts before sending!</h1>
+				<%}%>
+			<%} else {%>
+				<h1>This campaign has been delivered!</h1>
+			<%}%>
+			<div class="section-divider"></div>
+
+			<%if(data.campaign.subject) {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-ok-circle"></i>
+					<div class="main">
+						<h2>Subject Line</h2>
+						"<%==data.campaign.subject%>"
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-default" data-rfl-click="gotoStep campaign">Edit</button>
+					<%}%>
+				</div>
+			<%} else {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-remove-circle"></i>
+					<div class="main">
+						<h2>Subject Line</h2>
+						Sbject line is required
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-danger" data-rfl-click="gotoStep campaign">Edit</button>
+					<%}%>
+				</div>
+			<%}%>
+
+			<%if(customizedReplyTo) {%>
+				<%if(data.campaign.fromName && data.campaign.fromEmail) {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-ok-circle"></i>
+						<div class="main">
+							<h2>From</h2>
+							The receiver will see the email send from <span class="strong"><%==data.campaign.fromName%> &lt;<%==data.campaign.fromEmail%>&gt;</span>
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-default" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%} else {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-remove-circle"></i>
+						<div class="main">
+							<h2>From</h2>
+							From name and email are required
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-danger" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%}%>
+				<%if(data.campaign.replyToName && data.campaign.replyToEmail) {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-ok-circle"></i>
+						<div class="main">
+							<h2>Reply To</h2>
+							The reply will be sent to <span class="strong"><%==data.campaign.replyToName%> &lt;<%==data.campaign.replyToEmail%>&gt;</span>
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-default" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%} else {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-remove-circle"></i>
+						<div class="main">
+							<h2>Reply To</h2>
+							Reply to name and email are required
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-danger" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%}%>
+			<%} else {%>
+				<%if(data.campaign.fromName && data.campaign.fromEmail) {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-ok-circle"></i>
+						<div class="main">
+							<h2>From &amp; Reply To</h2>
+							The receiver will see the email send from and the reply will be sent to <br />
+							<span class="strong"><%==data.campaign.fromName%> &lt;<%==data.campaign.fromEmail%>&gt;</span>
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-default" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%} else {%>
+					<div class="section-sm confirm-item">
+						<i class="icon-remove-circle"></i>
+						<div class="main">
+							<h2>From &amp; Reply To</h2>
+							From and reply to name and email are required
+						</div>
+						<%if(editable) {%>
+							<button class="btn btn-danger" data-rfl-click="gotoStep campaign">Edit</button>
+						<%}%>
+					</div>
+				<%}%>
+			<%}%>
+
+			<%if(data.htmlDefined) {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-ok-circle"></i>
+					<div class="main">
+						<h2>HTML Content</h2>
+						<a href="javascript:void(0);" data-rfl-click="overviewPreviewHtml">Preview HTML content</a> － 
+						<a href="javascript:void(0);" data-rfl-click="overviewUploadSendSample">Send yourself a test email</a> － 
+						<a href="javascript:void(0);" data-rfl-click="viewSpamRating">View spam rating</a>
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-default" data-rfl-click="gotoStep content">Edit</button>
+					<%}%>
+				</div>
+			<%} else {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-remove-circle"></i>
+					<div class="main">
+						<h2>HTML Content</h2>
+						HTML content is required
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-danger" data-rfl-click="gotoStep content">Edit</button>
+					<%}%>
+				</div>
+			<%}%>
+
+			<%if(data.plainTextDefined) {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-ok-circle"></i>
+					<div class="main">
+						<h2>Plain Text</h2>
+						<a href="javascript:void(0);" data-rfl-click="overviewPreviewPlainText">Preview plain text</a>
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-default" data-rfl-click="gotoStep content-plain-text">Edit</button>
+					<%}%>
+				</div>
+			<%} else {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-exclamation-sign"></i>
+					<div class="main">
+						<h2>Plain Text</h2>
+						You chose not to include a plain-text version. You should probably reconsider.
+					</div>
+					<%if(editable) {%>
+						<button class="btn btn-warning" data-rfl-click="gotoStep content-plain-text">Edit</button>
+					<%}%>
+				</div>
+			<%}%>
+
+			<%if(editable) {%>
+				<%if(readyToDeliver) {%>
+					<div class="delivery-rule section"></div>
+				<%}%>
+			<%} else {%>
+				<div class="section-sm confirm-item">
+					<i class="icon-ok-circle"></i>
+					<div class="main">
+						<h2>Delivery</h2>
+						<%if(data.delivery.deliverImmediately) {%>
+							This campaign has been delivered
+						<%} else {%>
+							This campaign has been scheduled at <%=$opt.util.formatDateTime(data.delivery.scheduleDate, 'yyyy-MM-dd hh:mm')%>
+						<%}%>
+					</div>
+				</div>
+			<%}%>
+		</div>
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<%if(editable) {%>
+			<button class="btn btn-default pull-left" data-rfl-click="gotoStep content-plain-text"><i class="icon-arrow-left"></i> Previous</button> 
+			<ul class="steps">
+				<li><a href="javascript:void(0);" data-rfl-click="gotoStep campaign"><span>Setup</span></a></li>
+				<li class="dropdown">
+					<a href="javascript:void(0);" data-rfl-click="gotoStep content"><span>Design</span></a>
+				</li>
+				<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-plain-text"><span>Plain Text</span></a></li>
+				<li class="active"><a href="javascript:void(0);"><span>Confirm</span></a></li>
+			</ul>
+			<%if(readyToDeliver) {%>
+				<button class="btn btn-primary pull-right" data-rfl-click="saveCampaignDelivery">Delivery</button> 
+			<%}%>
+		<%} else {%>
+			<button class="btn btn-default pull-left" data-rfl-click="returnToManageCampaigns"><i class="icon-arrow-left"></i> Back to manage campaigns</button> 
+		<%}%>
+	</div>
+</div>

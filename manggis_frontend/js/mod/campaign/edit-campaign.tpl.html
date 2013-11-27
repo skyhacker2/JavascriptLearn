@@ -1,0 +1,89 @@
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%==marks[0] == 'duplicate' ? 'Duplicate Campaign - ' + data.name : (data.name || 'New Campaign')%></span>
+		<ul class="header-actions">
+		</ul>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content campaign-form">
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<div class="form-group">
+					<label for="campaign-name">Campaign Name %{{mandatory}}%</label>
+					<input id="campaign-name" class="form-control" name="name" maxlength="80" data-validator="mandatory name" type="text" value="<%==marks[0] != 'duplicate' && data.name || ''%>" data-rfl-keyup="step1KeyupSubmit" /> 
+					<span class="help-block help-error"></span>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<div class="form-group">
+					<label for="campaign-subject">Subject %{{mandatory}}%</label>
+					<div class="input-hint-wrapper">
+						<input id="campaign-subject" class="form-control" name="subject" maxlength="180" type="text" value="<%==data.subject || ''%>" data-rfl-keyup="step1KeyupSubmit 10 50" />
+						<div class="input-hint-box">
+							Enter the email subject line for this campaign.
+							<div style="display: none;">
+								<button class="btn btn-default btn-sm"><i class="icon-user"></i></button>
+							</div>
+						</div>
+					</div>
+					<span class="help-block help-error"></span>
+				</div>
+				<div class="personalize-subject">
+					<span><a href="javascript:void(0);" data-rfl-click="showPersonalizeSubject">Personalize</a> the subject with customer details.</span>
+					<div id="personalize-subject-div"></div>
+				</div>
+				<label class="mockup-checkbox-label" style="width: 250px; margin-top: 10px;">
+					<label class="mockup-checkbox <%=data.useAdRemark ? 'on' : ''%>">
+						<input type="checkbox" id="enableAdRemark" <%=data.useAdRemark ? 'checked' : ''%> /><span><i class="icon-ok"></i></span>
+					</label>
+					<span>Enable [AD] Subject Suffix</span> <i id="showPrefixIntr" class="icon-info-sign"></i>
+				</label>
+			</div>
+		</div>
+
+		<%
+			var customizedReplyTo = data.fromName != data.replyToName || data.fromEmail != data.replyToEmail;
+		%>
+		<div class="section">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="form-group">
+						<label for="from-email">From Email %{{mandatory}}%</label>
+						<input id="from-email" class="form-control" name="fromEmail" maxlength="180" data-validator="email" type="email" value="<%==data.fromEmail || ''%>" data-rfl-keyup="step1KeyupSubmit" /> 
+						<span class="help-block help-error"></span>
+						<%if(!customizedReplyTo) {%>
+							<div class="text-gray-light">Replies will be sent to this email (<a href="javascript:void(0);" data-rfl-click="showReplySetting">change</a>) </div>
+						<%}%>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="form-group">
+						<label for="from-name">From Name %{{mandatory}}%</label>
+						<input id="from-name" class="form-control" name="fromName" maxlength="80" data-validator="name" type="text" value="<%==data.fromName || ''%>" data-rfl-keyup="step1KeyupSubmit 5 20"/> 
+						<span class="help-block help-error"></span>
+					</div>
+				</div>
+			</div>
+			<div id="reply-to-div">
+				<%if(customizedReplyTo) {%>
+					<!-- include "./edit-campaign-reply-to.tpl.html" -->
+				<%}%>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<ul class="steps">
+			<li class="active"><a href="javascript:void(0);"><span>Setup</span></a></li>
+			<li class="dropdown">
+				<a href="javascript:void(0);" data-rfl-click="saveCampaign content"><span>Design</span></a>
+			</li>
+			<li><a href="javascript:void(0);" data-rfl-click="saveCampaign content-plain-text"><span>Plain Text</span></a></li>
+			<li><a href="javascript:void(0);" data-rfl-click="saveCampaign overview"><span>Confirm</span></a></li>
+		</ul>
+		<button class="btn btn-primary pull-right" data-rfl-click="saveCampaign content">Next <i class="icon-arrow-right"></i></button> 
+	</div>
+</div>

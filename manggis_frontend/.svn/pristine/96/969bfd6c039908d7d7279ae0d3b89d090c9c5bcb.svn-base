@@ -1,0 +1,20 @@
+<table style="width:100%">
+	<tr>
+		<td align="center">
+			<div class="dropImage" style="width:300px;" data-setter="setImg">
+				<%if(img){%>
+					<%=img%>
+					<p class="fix-btn" style="bottom:0px;width:100%"><a class="btn btn-primary" href="javascript:void(0);"><i class="icon-cloud-upload"></i> Upload</a>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="return false" class="edit">link</a></p>
+					<div class="progress progress-striped active" style="display:none;position:absolute;bottom:50px;height:20px;width:100%"><div class="bar" style="width: 0%;"></div></div>
+				<%}else{%>
+					<%=defaultImg%>
+				<%}%>
+			</div>
+		</td>
+		<td style="width: 100%; padding: 10px;">
+			<div contenteditable="true" data-setter="setTxt">
+				<%=txt%>
+			</div>
+		</td>
+	</tr>
+</table>

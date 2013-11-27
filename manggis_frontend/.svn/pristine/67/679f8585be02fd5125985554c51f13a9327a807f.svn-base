@@ -1,0 +1,17 @@
+{
+	"code": 0,
+	"message": "Update property successfully!",
+	"data": {
+		"listName": "Default",
+		"property": {
+			"id": "1",
+			"name": "Gender",
+			"tag": "GENDER",
+			"propertyType": "SET",
+			"items": [
+				{"id": "1", "value": "Male"}, 
+				{"id": "2", "value": "Female"}
+			]
+		}
+	}
+}

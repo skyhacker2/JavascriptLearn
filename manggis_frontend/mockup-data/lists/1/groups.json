@@ -1,0 +1,195 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"group": {
+			"listName": "DB Pool",
+			"id": "1",
+			"name": "Vip Customer",
+			"customers": 0
+		},
+		"listName": "DB Pool",
+		"groups": [
+			{
+				"id": "1",
+				"name": "Vip Customer",
+				"customers": 2432,
+				"openRate": 0.05
+			},
+			{
+				"id": "2",
+				"name": "Customer AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				"customers": 575,
+				"openRate": 0.015
+			},
+			{
+				"id": "3",
+				"name": "Customer B",
+				"customers": 7888,
+				"openRate": 0.025
+			},
+			{
+				"id": "4",
+				"name": "Customer C",
+				"customers": 45453,
+				"openRate": 0.045
+			},
+			{
+				"id": "5",
+				"name": "Customer D",
+				"customers": 666,
+				"openRate": 0.15
+			},
+			{
+				"id": "6",
+				"name": "Customer E",
+				"customers": 90090,
+				"openRate": 0.035
+			},
+			{
+				"id": "7",
+				"name": "Customer F",
+				"customers": 3443,
+				"openRate": 0.25
+			},
+			{
+				"id": "8",
+				"name": "Customer G",
+				"customers": 321,
+				"openRate": 0.025
+			},
+			{
+				"id": "9",
+				"name": "Customer H",
+				"customers": 321,
+				"openRate": 0.0
+			},
+			{
+				"id": "10",
+				"name": "Customer I",
+				"customers": 321,
+				"openRate": 0.12
+			},
+			{
+				"id": "11",
+				"name": "Customer J",
+				"customers": 321,
+				"openRate": 0.0
+			},
+			{
+				"id": "12",
+				"name": "Customer K",
+				"customers": 321,
+				"openRate": 0.0
+			},
+			{
+				"id": "13",
+				"name": "Customer L",
+				"customers": 321,
+				"openRate": 0.4
+			},
+			{
+				"id": "14",
+				"name": "Customer M",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "15",
+				"name": "Customer N",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "16",
+				"name": "Customer O",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "17",
+				"name": "Customer P",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "18",
+				"name": "Customer Q",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "19",
+				"name": "Customer R",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "20",
+				"name": "Customer S",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "21",
+				"name": "Customer T",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "22",
+				"name": "Customer U",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "23",
+				"name": "Customer V",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "24",
+				"name": "Customer X",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "25",
+				"name": "Customer X",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "26",
+				"name": "Customer Y",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "27",
+				"name": "Customer Z",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "28",
+				"name": "Customer XX",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "29",
+				"name": "Customer XY",
+				"customers": 321,
+				"openRate": 0.05
+			},
+			{
+				"id": "30",
+				"name": "Customer ZZ",
+				"customers": 321,
+				"openRate": 0.05
+			}
+		]
+	}
+}

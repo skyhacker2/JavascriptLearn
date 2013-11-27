@@ -1,0 +1,33 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"permissionGroups": [
+			{
+				"id": 1,
+				"name": "USER_MANAGEMENT",
+				"permissions": [{"id": 1, "name": "VIEW_USER"}, {"id": 2, "name": "CREATE_USER"}, {"id": 3, "name": "DELETE_USER"}]
+			},
+			{
+				"id": 2,
+				"name": "ROLE_MANAGEMENT",
+				"permissions": [{"id": 4, "name": "VIEW_ROLE"}, {"id": 5, "name": "CREATE_ROLE"}, {"id": 6, "name": "DELETE_ROLE"}]
+			},
+			{
+				"id": 3,
+				"name": "GROUP_MANAGEMENT",
+				"permissions": [{"id": 7, "name": "VIEW_GROUP"}, {"id": 8, "name": "CREATE_GROUP"}, {"id": 9, "name": "DELETE_GROUP"}]
+			},
+			{
+				"id": 4,
+				"name": "LIST_MANAGEMENT",
+				"permissions": [{"id": 10, "name": "VIEW_LIST"}, {"id": 11, "name": "CREATE_LIST"}, {"id": 12, "name": "DELETE_LIST"}]
+			},
+			{
+				"id": 5,
+				"name": "CAMPAIGN_MANAGEMENT",
+				"permissions": [{"id": 13, "name": "VIEW_CAMPAIGN"}, {"id": 14, "name": "CREATE_CAMPAIGN"}, {"id": 15, "name": "DELETE_CAMPAIGN"}]
+			}
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"request": {
+		"method": "post/get",
+		"body": {
+			"emails": [
+				"gary.wang@radicasys.com", "iverson.he@radicasys.com"
+			]
+		}
+	},
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"emails": [
+			"gary.wang@radicasys.com", "iverson.he@radicasys.com"
+		]
+	}
+}

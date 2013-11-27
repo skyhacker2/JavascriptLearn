@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="%{{_lang_}}%">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>${{customer.label.createProperty}}$ - ${{common.appName}}$</title>
+<!-- include "../inc/head.inc.html" -->
+</head>
+<body>
+<!-- include "../inc/body.inc.html" -->
+
+<!-- require "../../js/lang/%{{_lang_}}%/customer" -->
+<!-- require "../../js/lang/%{{_lang_}}%/property-types" -->
+<!-- require "../../js/mod/customer/controllers/property-edit" -->
+<script type="text/javascript">
+G.pageRequire(['../../js/mod/customer/controllers/property-edit', '../../js/mod/nav-bar/init', 'ajax!' + G.getAjaxLoadUrl('users/information')], function(PropertyEdit, navBar, auth) {
+	require(['rfl'], function(rfl) {
+		rfl.auth.init(auth, function() {
+			navBar.init('list');
+			PropertyEdit.init({el: '#main-div'});
+		});
+	});
+}, function() {
+	require(['rfl'], function(rfl) {
+		rfl.ui.renderPageLoadError('#main-div');
+	});
+});
+</script>
+</body>
+</html>

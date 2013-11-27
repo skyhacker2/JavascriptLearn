@@ -1,0 +1,61 @@
+<%if(completedJobs.length) {%>
+	<h3><%=completedJobs.length%> job(s) completed</h3>
+	<%
+	var i, l, job;
+	for(var i = 0, l = completedJobs.length; i < l; i++) {
+		job = completedJobs[i];
+	%>
+		<ul>
+			<li>
+				<i class="icon-ok"></i> 
+				<%if(job.info.added && job.info.updated) {%>
+					<%=job.info.added%> customer(s) added, and <%=job.info.updated%> customer(s) updated 
+				<%} else if(job.info.added) {%>
+					<%=job.info.added%> customer(s) added 
+				<%} else {%>
+					<%=job.info.updated%> customer(s) updated 
+				<%}%>
+				at <%=$opt.util.formatDateTime(job.timeComplete, 'yyyy-MM-dd HH:mm')%>. 
+				<a href="html/customer/import-<%=G.LANG%>.html#!<%=listId%>/<%=base64Info%>/finished/<%=job.id%>/overview">View detail</a> 
+				<i class="icon-remove-sign"></i>
+			</li>
+			<%
+			job = completedJobs[++i];
+			if(job) {
+			%>
+				<li>
+					<i class="icon-ok"></i> 
+					<%if(job.info.added && job.info.updated) {%>
+						<%=job.info.added%> customer(s) added, and <%=job.info.updated%> customer(s) updated 
+					<%} else if(job.info.added) {%>
+						<%=job.info.added%> customer(s) added 
+					<%} else {%>
+						<%=job.info.updated%> customer(s) updated 
+					<%}%>
+					at <%=$opt.util.formatDateTime(job.timeComplete, 'yyyy-MM-dd HH:mm')%>. 
+					<a href="html/customer/import-<%=G.LANG%>.html#!<%=listId%>/<%=base64Info%>/finished/<%=job.id%>/overview">View detail</a> 
+					<i class="icon-remove-sign"></i>
+				</li>
+			<%}%>
+		</ul>
+	<%}%>
+	<%if(totalPages > 1) {%>
+		<div class="text-right">
+			<%if(page > 1) {%>
+				<a href="javascript:void(0);" onclick="return false;" data-rfl-click="renderCompletedJobs <%=page - 1%>"><i class="icon-chevron-left"></i></a> 
+			<%} else {%>
+				<i class="icon-chevron-left"></i> 
+			<%}%>
+			&nbsp; 
+			<%if(page < totalPages) {%>
+				<a href="javascript:void(0);" onclick="return false;" data-rfl-click="renderCompletedJobs <%=page + 1%>"><i class="icon-chevron-right"></i></a>
+			<%} else {%>
+				<i class="icon-chevron-right"></i> 
+			<%}%>
+		</div>
+	<%}%>
+<%} else {%>
+	<div class="no-jobs">
+		<i class="icon-ok"></i> Completed jobs will go here if any.
+	</div>
+<%}%>

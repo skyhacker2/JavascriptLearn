@@ -1,0 +1,22 @@
+{
+	"code": 0,
+	"message": "Update user successfully!",
+	"data": {
+		"id": 2,
+		"firstName": "Gary",
+		"lastName": "Wang",
+		"email": "gary.wang@radicasys.com",
+		"enabled": true,
+		"superUser": true,
+		"groups": [
+			{
+				"id": 1,
+				"name": "Admin",
+				"roles": [
+					{"id": 1, "name": "Admin"},
+					{"id": 2, "name": "List Manager"}
+				]
+			}
+		]
+	}
+}

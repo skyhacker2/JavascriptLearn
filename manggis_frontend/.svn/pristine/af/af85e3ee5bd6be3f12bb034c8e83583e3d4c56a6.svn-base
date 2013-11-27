@@ -1,0 +1,35 @@
+<div class="clearfix">
+	<div class="float-block">
+		<div class="header">
+			Basic Setting
+		</div>
+		<p>
+			Align: &nbsp;&nbsp;
+			<div class="btn-group">
+				<button class="btn" data-rfl-click="align left">
+					<i class="icon-align-left"></i> Left
+				</button>
+				<button class="btn" data-rfl-click="align center">
+					<i class="icon-align-center"></i> Center
+				</button>
+				<button class="btn" data-rfl-click="align right">
+					<i class="icon-align-right"></i> Right
+				</button>
+			</div>
+		</p>
+
+		<div class="control-group">
+			<label class="control-label">Hyperlink</label>
+				<div class="controls">
+				<input type="text" id="buttonLink" name="buttonLink" onclick="this.select();" value="<%=blockData.href || 'http://...'%>">
+				<span class="help-inline"></span>
+			</div>
+		</div>
+
+		<p>
+			Text: &nbsp;&nbsp;<input type="text" class="span3" value="<%=blockData.txt%>" id="buttonText" name="buttonText" onclick="this.select();">
+		</p>
+	</div>
+
+	<div class="alert-container" id="upload-picture-form"></div>
+</div>

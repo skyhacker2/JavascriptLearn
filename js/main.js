@@ -5,13 +5,7 @@
     main = (function() {
       function main() {}
 
-      main.run = function() {
-        console.log(location.host);
-        console.log(location.hash);
-        console.log(navigator.appCodeName);
-        console.log(navigator.appName);
-        return console.log(navigator.appVersion);
-      };
+      main.run = function() {};
 
       return main;
 

@@ -1,0 +1,14 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Customers</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><%=name%></td>
+			<td><%=customers%></td>
+		</tr>
+	</tbody>
+</table>

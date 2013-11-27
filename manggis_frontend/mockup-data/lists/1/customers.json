@@ -1,0 +1,52 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"total": 15000000,
+		"listName": "DB Pool",
+		"customers": [
+			{
+				"id": "1",
+				"property": {
+					"1": "gary.wang@radicasys.com",
+					"2": "Gary",
+					"3": "Wang",
+					"4": "Gary",
+					"5": 30,
+					"6": "1",
+					"11": "10",
+					"12": ["12", "13"],
+					"13": "Fan Shen Road, Bao An District, Shen Zhen City, Guang Dong Province, China",
+					"14": "2013/3/27"
+				}
+			},
+			{
+				"id": "2",
+				"property": {
+					"1": "ocean.yang@radicasys.com",
+					"2": "Ocean",
+					"3": "Yang",
+					"6": "1"
+				}
+			},
+			{
+				"id": "3",
+				"property": {
+					"1": "daniel.yang@radicasys.com",
+					"2": "Daniel",
+					"3": "Yang",
+					"6": "1"
+				}
+			},
+			{
+				"id": "4",
+				"property": {
+					"1": "ivy.fan@radicasys.com",
+					"2": "Ivy",
+					"3": "Fan",
+					"6": "2"
+				}
+			}
+		]
+	}
+}

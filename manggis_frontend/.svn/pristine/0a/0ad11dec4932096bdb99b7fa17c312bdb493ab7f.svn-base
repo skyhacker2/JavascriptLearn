@@ -1,0 +1,7 @@
+<div style="padding:10px 0;width:100%;<%if(align){%>text-align:<%=align%>;<%}%>">
+	<a href="<%=href%>" style="-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;display:inline-block;border-width:1px;border-style:solid;border-color:#196394;background-color:#2E8CDE;-moz-box-shadow:0px 1px 1px rgba(0, 0, 0, 0.25), inset 0px 0px 0px white;-webkit-box-shadow:0px 1px 1px rgba(0, 0, 0, 0.25), inset 0px 0px 0px white;box-shadow:0px 1px 1px rgba(0, 0, 0, 0.25), inset 0px 0px 0px white;padding-top:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;font-size:18px;font-family:Helvetica Neue, Helvetica, Arial, sans serif;text-shadow:0px -1px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px black;vertical-align:top;text-decoration:none;" target="_blank">
+		<span style="color:#FFFFFF;" data-setter="setTxt">
+			<%==txt%>
+		</span>
+	</a>
+</div>

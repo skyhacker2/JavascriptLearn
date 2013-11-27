@@ -1,0 +1,27 @@
+<%
+var rfl = require('rfl');
+%>
+
+<div class="action" onclick="require('jquery')(this).closest('.selection-result').toggleClass('minimized');">
+	<i class="icon-caret-down"></i>
+	<i class="icon-caret-up"></i>
+</div>
+<ul>
+	<li class="title">Selected Action Set : </li>
+	<%
+	var selectedCount = 0;
+	for(var i = 0, l = groups.length; i < l; i++) {
+		var group = groups[i];%>
+		<%
+		if(group.selected) {
+			selectedCount++;
+		%>
+			<li class="type-<%=group.type%>" data-index="<%=group.index%>">
+				<span title="<%==group.name%>"><%==rfl.util.headByByte(group.name, 20, '...')%> (<%=group.customerAmount%>)</span> <i class="icon-remove" data-rfl-click="select-group-map-item"></i>
+			</li>
+		<%}%>
+	<%}%>
+	<%if(selectedCount === 2) {%>
+		<li class="comoare-btn"><button class="btn btn-default btn-sm">Compare</button></li>
+	<%}%>
+</ul>

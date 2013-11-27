@@ -1,0 +1,30 @@
+<div class="guiding error page-load-error">
+	<div class="icon-part">
+		<i class="icon-frown"></i>
+	</div>
+	<div class="text-part" style="color:#000000;">
+		<h1>对于您的离开，我们很遗憾……</h1>
+		<p>我们真诚地希望您能继续订阅并关注我们的最新动态。</p>
+		<p>点击下面的按钮，把<%=email%>从我们的订阅名单中移除。</p>
+		<label class="radio">
+			<input type="radio" name="optionsRadios" id="unsubscribe-all" value="unsubscribe-all" checked>
+		Unsubscribe all
+		</label>
+		<label class="radio">
+			<input type="radio" name="optionsRadios" id="change-preference" value="change-preference">
+		Change preference
+		</label>
+		<div id="all-type" style="margin-left:20px;display:none;">
+			<label class="checkbox">
+				<input type="checkbox" id="inlineCheckbox1" value="option1"> EnewsLetter
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" id="inlineCheckbox2" value="option2"> Promotion
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" id="inlineCheckbox3" value="option3"> Event
+			</label>
+		</div>
+		<a class="btn btn-danger btn-lg" id="unsubscribe" href="javascript:void(0);" onclick="return;" data-rfl-click="unsubscribe">取消订阅</a>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<table style="width:100%">
+	<tr>
+		<%if(img){%>
+		<td align="center">
+			<div class="dropImage">
+				<%=img%>
+			</div>
+		</td>
+		<%}%>
+		<td style="width: 100%">
+			<%=txt%>
+		</td>
+	</tr>
+</table>

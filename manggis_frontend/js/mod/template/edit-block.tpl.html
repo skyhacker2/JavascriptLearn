@@ -1,0 +1,108 @@
+<div class="clearfix">
+	<div class="float-block">
+		<div class="header">
+			Border Radius
+		</div>
+
+		<div class="input-append">
+			<img src="template/icon/radius.png" />
+			<input type="text" id="borderRadius" style="width:142px;" onclick="this.select();" value="<%=check(blockData.borderRadius)%>">
+			<span class="add-on">px</span>
+		</div>
+		<table>
+			<tr>
+				<td width="60">
+					<div class="input-append">
+						<img src="template/icon/radius0.png" />
+						<input type="text" id="borderRadius0" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.borderRadius[0].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+				<td width="30"></td>
+				<td width="60">
+					<div class="input-append">
+						<img src="template/icon/radius1.png" />
+						<input type="text" id="borderRadius1" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.borderRadius[1].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="input-append">
+						<img src="template/icon/radius3.png" />
+						<input type="text" id="borderRadius3" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.borderRadius[3].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+				<td></td>
+				<td>
+					<div class="input-append">
+						<img src="template/icon/radius2.png" />
+						<input type="text" id="borderRadius2" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.borderRadius[2].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="float-block">
+		<div class="header">
+			Margin
+		</div>
+
+		<div class="input-append">
+			<img src="template/icon/margin.png" />
+			<input type="text" id="margin" style="width:142px;" onclick="this.select();" value="<%=check(blockData.margin)%>">
+			<span class="add-on">px</span>
+		</div>
+		<table>
+			<tr>
+				<td width="60">
+					<div class="input-append">
+						<img src="template/icon/margin0.png" />
+						<input type="text" id="margin0" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.margin[0].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+				<td width="30"></td>
+				<td width="60">
+					<div class="input-append">
+						<img src="template/icon/margin1.png" />
+						<input type="text" id="margin1" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.margin[1].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="input-append">
+						<img src="template/icon/margin3.png" />
+						<input type="text" id="margin3" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.margin[3].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+				<td></td>
+				<td>
+					<div class="input-append">
+						<img src="template/icon/margin2.png" />
+						<input type="text" id="margin2" style="width:18px;" maxlength="2" onclick="this.select();" value="<%=blockData.margin[2].replace("px", "")%>">
+						<span class="add-on">px</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="float-block">
+		<div class="header">
+			Background
+		</div>
+
+		<div style="float:left; width:28px; height: 28px; border: 1px solid #000; margin-right:5px; background: <%=blockData.background%>" id="backgroundColorShow"></div>
+		<input style="width:54px;float:left;" id="backgroundColor" type="text" maxlength="7" value="<%=blockData.background%>">
+	</div>
+
+	<div class="alert-container" id="upload-picture-form"></div>
+</div>

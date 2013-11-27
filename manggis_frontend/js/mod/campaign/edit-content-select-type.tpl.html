@@ -1,0 +1,78 @@
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%==campaignName%></span>
+		<ul class="header-actions">
+		</ul>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content">
+		<div id="file-drop" class="upload-campaign-file-drop campaign-type-btn">
+			<div class="icon-part">
+				<i class="icon-upload-alt"></i>
+			</div>
+			<div class="text-part">
+				<h4>Upload your own design</h4>
+				Drag and drop a file containing your design here, or click to select it from your computer.<br />You can upload a <strong>HTML</strong> file or a <strong>ZIP</strong> file containing a HTML file and images.
+			</div>
+			<i class="icon-double-angle-up"></i>
+			<i class="icon-hand-up"></i>
+			<div id="file-drop-area" class="upload-campaign-file-drop-area"></div>
+		</div>
+		<div id="progress-bar" class="upload-campaign-progress-bar display-none">
+			<div class="progress-text">0%</div>
+			<div class="progress progress-striped active">
+				<div class="progress-bar" style="width: 0%;"></div>
+			</div>
+		</div>
+		<!--
+		<div class="section-divider"><div>Or</div></div>
+
+		<div class="campaign-type-btn" data-rfl-click="selectContentType builder">
+			<div class="icon-part">
+				<i class="icon-magic"></i>
+			</div>
+			<div class="text-part">
+				<h4>Use our template builder</h4>
+				Add content to one of your pre-designed email templates..
+			</div>
+			<i class="icon-double-angle-up"></i>
+			<i class="icon-hand-up"></i>
+		</div>
+		-->
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<button class="btn btn-default pull-left" data-rfl-click="gotoStep campaign"><i class="icon-arrow-left"></i> Previous</button> 
+		<ul class="steps">
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep campaign"><span>Setup</span></a></li>
+			<li class="active dropdown">
+				<%
+					var contentDefined = false;
+					if(contentEditor == CAMPAIGN_CONTENT_EDITOR.DESIGNER || contentEditor == CAMPAIGN_CONTENT_EDITOR.CKEDITOR) {
+						contentDefined = true;
+					}
+				%>
+				<a href="javascript:void(0);">
+					<span>
+						Design
+						<%if(contentDefined) {%>
+							&nbsp;<i class="icon-caret-down"></i>
+						<%}%>
+					</span>
+				</a>
+				<%if(contentDefined) {%>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" data-rfl-click="gotoStep content">Edit Content</a></li>
+						<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-define-urls">Define &amp; Validate Urls</a></li>
+					</ul>
+				<%}%>
+			</li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-plain-text"><span>Plain Text</span></a></li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep overview"><span>Confirm</span></a></li>
+		</ul>
+		<button class="btn btn-primary pull-right" data-rfl-click="gotoStep content-plain-text">Next <i class="icon-arrow-right"></i></button> 
+	</div>
+</div>

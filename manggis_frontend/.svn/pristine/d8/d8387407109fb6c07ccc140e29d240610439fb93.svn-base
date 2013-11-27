@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="%{{_lang_}}%">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>${{role.label.manageRoles}}$ - ${{common.appName}}$</title>
+<!-- include "../inc/head.inc.html" -->
+</head>
+<body>
+<!-- include "../inc/body.inc.html" -->
+
+<!-- require "../../js/lang/%{{_lang_}}%/role" -->
+<!-- require "../../js/mod/role/controllers/role-edit" -->
+<script type="text/javascript">
+G.pageRequire(['../../js/mod/role/controllers/role-edit', '../../js/mod/nav-bar/init', 'ajax!' + G.getAjaxLoadUrl('users/information')], function(RoleEdit, navBar, auth) {
+	require(['spine', 'rfl'], function(Spine, rfl) {
+		rfl.auth.init(auth, function() {
+			navBar.init('role');
+			new RoleEdit({el: '#main-div'});
+		});
+	});
+}, function() {
+	require(['rfl'], function(rfl) {
+		rfl.ui.renderPageLoadError('#main-div');
+	});
+});
+</script>
+</body>
+</html>

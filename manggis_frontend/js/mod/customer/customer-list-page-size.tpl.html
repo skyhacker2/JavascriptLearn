@@ -1,0 +1,8 @@
+<div class="btn-group pull-right" data-toggle="tooltip" title="How many customers do you want to display in one page?">
+	<button class="btn btn-default <%=itemsPerPage == '10' ? 'disabled' : ''%>" data-rfl-click="setItemsPerPage 10">10</button>
+	<button class="btn btn-default <%=itemsPerPage == '20' ? 'disabled' : ''%>" data-rfl-click="setItemsPerPage 20">20</button>
+	<%if(G.IS_PC) {%>
+		<button class="btn btn-default <%=itemsPerPage == '50' ? 'disabled' : ''%>" data-rfl-click="setItemsPerPage 50">50</button>
+		<button class="btn btn-default <%=itemsPerPage == '100' ? 'disabled' : ''%>" data-rfl-click="setItemsPerPage 100">100</button>
+	<%}%>
+</div>

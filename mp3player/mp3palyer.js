@@ -1,6 +1,8 @@
 var fs = require('fs');
 var lame = require('lame');
 var Speaker = require('speaker');
+var Iconv = require('iconv').Iconv;
+
  
 var mp3path = "music.mp3"
 fs.createReadStream(mp3path)

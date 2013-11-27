@@ -1,0 +1,110 @@
+<!-- include "./body-theme-style.inc.html" -->
+
+<div class="app-menu">
+	<div class="top"></div>
+	<div class="main-menu">
+		<ul>
+			<li id="nav-list">
+				<a href="html/customer/list-%{{_lang_}}%.html">
+					<span class="icon"><i class="icon-home"></i></span>
+					<span>Home</span>
+				</a>
+			</li>
+			<li class="divider">${{common.label.management}}$</li>
+			<li id="nav-user">
+				<a href="html/user/list-%{{_lang_}}%.html">
+					<span class="icon"><i class="icon-user"></i></span>
+					<span>${{common.label.user}}$</span>
+				</a>
+			</li>
+			<li id="nav-group">
+				<a href="html/group/list-%{{_lang_}}%.html">
+					<span class="icon"><i class="icon-group"></i></span>
+					<span>${{common.label.userGroup}}$</span>
+				</a>
+			</li>
+			<li id="nav-role">
+				<a href="html/role/list-%{{_lang_}}%.html">
+					<span class="icon"><i class="icon-user-md"></i></span>
+					<span>${{common.label.role}}$</span>
+				</a>
+			</li>
+			<li id="nav-ad-remark">
+				<a href="html/ad-remark/list-%{{_lang_}}%.html">
+					<span class="icon"><i class="icon-ticket"></i></span>
+					<span>[AD] Subject Suffix</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<a class="handler" href="javascript:void(0);" data-rfl-click="fixAppMenu">
+		<i class="icon-lock"></i>
+		<i class="icon-unlock"></i>
+	</a>
+</div>
+<div class="app-top-bar">
+	<h1 class="pull-left">Intimate</h1>
+	<div class="menu-home icon pull-left">
+		<i class="icon-home"></i>
+		<i class="icon-angle-right"></i>
+	</div>
+	<div class="menu-home-cover"></div>
+	<div class="menu-handler icon pull-left" data-rfl-click="toggleAppMenu">
+		<i class="icon-reorder"></i>
+	</div>
+	<div class="search icon pull-left" data-rfl-click="toggleAppSearch">
+		<i class="icon-remove"></i>
+		<i class="icon-search"></i>
+	</div>
+	<div class="user pull-right" title="gary.wang@radicasys.com" data-rfl-click="toggleAppUserMenu">
+		<i class="icon-remove"></i>
+		<span></span>
+	</div>
+	<div class="msg pull-right" data-rfl-click="toggleAppMsgBox">
+		<i class="icon-remove"></i>
+		<span class="count">
+			<span class="new success">100</span>
+		</span>
+	</div>
+</div>
+<div class="app-search-wrapper">
+	<div class="app-search"></div>
+</div>
+<div class="app-user-menu"></div>
+<div class="app-msg-box">
+	<ul class="msg-types">
+		<li class="all"><span>All</span></li>
+		<li class="success active"><span>Success</span></li>
+		<li class="error"><span>Error</span></li>
+		<li class="warning"><span>Warning</span></li>
+		<li class="info"><span>Info</span></li>
+	</ul>
+	<div class="msg-list">
+		<div class="inner">
+			<div class="msg-item success">
+				<div class="msg-content">
+					23 customer wasn't added. See why
+				</div>
+				<a class="remove-msg" href="javascript:void(0);"><i class="icon-remove"></i></a>
+			</div>
+			<div class="msg-item error">
+				<div class="msg-content">
+					23 customer wasn't added. <br />See why
+				</div>
+				<a class="remove-msg" href="javascript:void(0);"><i class="icon-remove"></i></a>
+			</div>
+			<div class="msg-item warning">
+				<div class="msg-content">
+					23 customer wasn't added. <br />See why
+				</div>
+				<a class="remove-msg" href="javascript:void(0);"><i class="icon-remove"></i></a>
+			</div>
+			<div class="msg-item info">
+				<div class="msg-content">
+					23 customer wasn't added. <br />See why
+				</div>
+				<a class="remove-msg" href="javascript:void(0);"><i class="icon-remove"></i></a>
+			</div>
+		</div>
+	</div>
+</div>

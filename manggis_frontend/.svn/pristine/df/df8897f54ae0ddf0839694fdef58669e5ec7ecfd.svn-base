@@ -1,0 +1,37 @@
+<div class="section">	
+	<div class="header handler" title="<%=email%>" data-rfl-click="toggleUserMenuSection">
+		<i class="icon-caret-up"></i>
+		<i class="icon-caret-down"></i> 
+		<%=$opt.util.headByByte(email, 22, '...')%>
+	</div>
+	<ul class="body">
+		<li><a href="javascript:void(0);" data-rfl-click="navLogout"><i class="icon-off"></i> &nbsp;&nbsp; Logout</a></li>
+		<li><a href="javascript:void(0);" data-rfl-click="navChangePassword"><i class="icon-key"></i> &nbsp;&nbsp; Change Password</a></li>
+	</ul>
+</div>
+<%if(groups.length > 1) {%>
+	<div class="section">
+		<div class="header handler" title="<%==currentGroup.name%>" data-rfl-click="toggleUserMenuSection">
+			<i class="icon-caret-up"></i>
+			<i class="icon-caret-down"></i> 
+			<%==$opt.util.headByByte(currentGroup.name, 22, '...')%>
+		</div>
+		<ul class="body group-list">
+			<%for(var i = 0; i < groups.length; i++) {
+				var group = groups[i];%>
+				<%if(group.enabled) {%>
+					<li><a href="javascript:void(0);" onclick="return false;" data-rfl-click="navChangeGroup <%=group.id%>" title="<%==group.name%>"><%==$opt.util.headByByte(group.name, 24, '...')%></a></li>
+				<%}%>
+			<%}%>
+		</ul>
+	</div>
+<%}%>
+<ul class="theme">
+	<%$.each(['purple', 'red', 'orange', 'yellow', 'blue', 'sea', 'green', 'gray', 'black'], function(i, theme) {%>
+		<%if(theme == G.THEME) {%>
+			<li class="<%=theme%> active"><%=theme%></li>
+		<%} else {%>
+			<li class="<%=theme%>" data-rfl-click="changeTheme <%=theme%>"><%=theme%></li>
+		<%}%>
+	<%});%>
+</ul>

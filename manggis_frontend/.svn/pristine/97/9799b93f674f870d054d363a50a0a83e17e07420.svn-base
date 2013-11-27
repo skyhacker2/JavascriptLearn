@@ -1,0 +1,11 @@
+{
+	"code": 0,
+	"message": "Update role successfully!",
+	"data": {
+		"id": 2,
+		"name": "List Manager",
+		"description": "List Manager",
+		"superRole": false,
+		"permissionIds": ["1", "2", "3", "4"]
+	}
+}

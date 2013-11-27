@@ -1,0 +1,137 @@
+<style>
+.rotate-270 {
+	color: #369fe4 !important;
+	font-size: 1.7em !important;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+#my-popover {
+	display: block;
+	position: fixed;
+	top: 150px;
+	left: auto;
+	right: 2%;
+	border: 1px solid #369fe4;
+	-webkit-box-shadow: 0 5px 10px #369fe4;
+	-moz-box-shadow: 0 5px 10px #369fe4;
+	box-shadow: 0 5px 10px #369fe4; 
+	width: 31.914893617021278%; 
+	max-width: 500px;
+	z-index: 0;
+	-webkit-transition: margin-top 0.4s;
+	transition: margin-top 0.4s;
+}
+#my-popover.off {
+  margin-top: -600px;
+}
+.hide-top-bar #my-popover {
+	top: 50px;
+}
+#my-popover .popover-content {
+	max-height : 400px;
+}
+.link-marker.text-muted {
+	color: #999999;
+}
+#changeUrlGroup.has-error .help-block.help-error {
+	display: block;
+}
+</style>
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%==data.name%></span>
+		<div class="top">
+			<ul class="header-actions">
+				<li class="dropdown">
+					<a href="javascript:void(0);"><i class="icon-envelope-alt"></i> Preview &amp; Test <i class="icon-caret-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" data-rfl-click="previewUploadedContent">Preview this campaign</a></li>
+						<li><a href="javascript:void(0);" data-rfl-click="uploadSendSample">Send yourself a test email</a></li>
+						<li><a href="javascript:void(0);" data-rfl-click="viewSpamRating">View spam rating</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content">
+		<h2>Define & check urls</h2>
+
+		<p class="desc">
+			Define each url's title. The title you choose will appear when you view the reports for this campaign. 
+		</p>
+
+		<div class="row">
+			<div class="col-md-8" style="position:relative;">
+				<div id="link-view" style="border:1px solid #000000;">
+					<%=data.html%>
+				</div>
+				<div style="width:100%;display:block;height:100%;opacity:0.8;top:0;left:0;position:absolute;background-color:#ffffff;" id="link-map">
+				</div>
+			</div>
+			<div class="off-screen off-top col-md-4">
+				<p class="desc">
+					<i class="text-success icon-map-marker icon-large"></i> Available Link, you can right-click to disable it<br>
+					<i class="text-danger icon-map-marker icon-large"></i> Unavailable Link<br>
+					<i class="text-muted icon-map-marker icon-large"></i> Disabled Link, you can right-click to enable it<br>
+				</p>
+			</div>
+		</div>
+
+		<div class="popover right off" id="my-popover">
+			<div class="arrow" style="border-right-color:#369fe4"></div>
+			<h3 class="popover-title"><i class="text-success icon-map-marker icon-large icon-rotate-270" style="color:#369fe4"></i> Link Info</h3>
+			<div class="popover-content" style="overflow-y: auto;">
+				<table class="table table-striped">
+					<tbody>
+					<tr>
+						<td>
+						<span id="iurl" title="lalalall">http://www3.avaya.com</span> 
+						<a href="javascript:void(0)" data-rfl-click="edit-url"><i class="icon-edit"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<a href="#" target="_blank" id="ilink"><img src="http://www3.avaya.com/hk/eNewsletter/Nov2012/images/1112_6_L.jpg" style="max-height:200px" id="iimage"></a>
+						<h4 contenteditable="true" id="ititle">News Brief</h4>
+						<p contenteditable="true" id="idescription">No Description</p>
+						</td>
+					</tr>
+					</tbody>
+			</table>
+			</div>
+			<div style="padding: 14px 15px 15px;margin-bottom: 0;text-align: right;background-color: #f5f5f5;border-top: 1px solid #ddd;-webkit-border-radius: 0 0 6px 6px;-moz-border-radius: 0 0 6px 6px;border-radius: 0 0 6px 6px;-webkit-box-shadow: inset 0 1px 0 #ffffff;-moz-box-shadow: inset 0 1px 0 #ffffff;box-shadow: inset 0 1px 0 #ffffff;">
+				<button class="btn btn-primary" data-rfl-click="submit-define">OK</button> 
+				<button class="btn " data-rfl-click="cancel-define">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<button class="btn btn-default pull-left" data-rfl-click="gotoStep campaign"><i class="icon-arrow-left"></i> Previous</button> 
+		<ul class="steps">
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep campaign"><span>Setup</span></a></li>
+			<li class="active dropdown">
+				<a href="javascript:void(0);">
+					<span>
+						Design <i class="icon-caret-down"></i>
+					</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:void(0);" data-rfl-click="gotoStep content">Edit Content</a></li>
+					<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-select-type">Upload a new design or use our builder</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-plain-text"><span>Plain Text</span></a></li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep overview"><span>Confirm</span></a></li>
+		</ul>
+		<button class="btn btn-primary pull-right" data-rfl-click="gotoStep content-plain-text">Next <i class="icon-arrow-right"></i></button> 
+	</div>
+</div>

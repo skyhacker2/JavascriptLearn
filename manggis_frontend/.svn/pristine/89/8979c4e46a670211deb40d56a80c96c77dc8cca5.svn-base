@@ -1,0 +1,9 @@
+{
+  "code" : 0,
+  "message" : "Operation has been executed successfully.",
+  "data" : {
+    "id" : "2",
+    "name" : "DB Pool 2",
+    "customers" : 0
+  }
+}

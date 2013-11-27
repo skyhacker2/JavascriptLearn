@@ -1,0 +1,2 @@
+#!/bin/sh
+grunt --yomb-output-base-path "../manggis_web/src/main/webapp/cdn-internal/static" --yomb-properties "{\"config\": {\"domain\": \"'manggis.internal'\", \"cgiOrigin\": \"'http://controller.manggis.internal'\", \"cgiBase\": \"/controller/\", \"cdnOrigin\": \"'http://cdn.manggis.internal'\", \"cdnBase\": \"/static/\"}}"

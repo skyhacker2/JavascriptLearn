@@ -1,0 +1,15 @@
+.instant-editor {
+	padding: 10px;
+	border: solid 1px #ccc; 
+	border-radius: 5px; 
+	background-color: #f3f3f3; 
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	width: 360px;
+}
+.instant-editor .control-group {
+	margin-bottom: 10px; 
+	width: 285px;
+}
+.instant-editor .control-group .controls {
+	margin-left: 0;
+}

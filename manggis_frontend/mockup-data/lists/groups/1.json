@@ -1,0 +1,10 @@
+{
+	"code": 0,
+	"message": "Update customer group successfully!",
+	"data": {
+		"listName": "DB Pool",
+		"id": 1,
+		"name": "Vip Costomer",
+		"customers": 342343
+	}
+}

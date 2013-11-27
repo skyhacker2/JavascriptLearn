@@ -1,0 +1,23 @@
+<div id="rilink-form">
+	<div class="form-group">
+		<select id="rilink-type" class="form-control" data-validator="mandatory" data-rfl-keyup="rilinkEnterSubmit">
+			<option value="">-- Select a link type --</option>
+			<%for(var i = 0; i < navigators.length; i++) {
+				var item = navigators[i];%>
+				<option value="<%=item%>"><%=lang.campaign.label.navigators[i]%></option>
+			<%}%>
+		</select>
+		<span class="help-block help-error"></span>
+	</div>
+	<%if(!noNeedText) {%>
+		<div class="form-group place-holder-wrapper">
+			<div class="place-holder-text">
+				Input link text
+			</div>
+			<input id="rilink-text" class="form-control" type="text" data-validator="mandatory" data-rfl-keyup="rilinkEnterSubmit" />
+			<span class="help-block help-error"></span>
+		</div>
+	<%}%>
+	<button id="rilink-insert-btn" class="btn btn-sm btn-primary" data-rfl-click="rilinkSubmit">Insert</button> 
+	<button class="btn btn-sm btn-default" data-rfl-click="hideRilinkLayer">Cancel</button>
+</div>

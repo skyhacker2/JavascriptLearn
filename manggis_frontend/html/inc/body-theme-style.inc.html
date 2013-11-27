@@ -1,0 +1,11 @@
+<script type="text/javascript">
+(function() {
+	var cn = ' theme-' + G.THEME;
+	var m = document.cookie.match(/(?:^|;)\s*mf=([a-zA-Z0-9]+)/);
+	if(m && document.body.className.indexOf('full-screen-page') < 0) {
+		cn += ' menu-fixed';
+	}
+	document.body.className = document.body.className + cn;
+	document.documentElement.className = document.documentElement.className + (G.IS_PC ? ' is-pc' : ' is-mobile');
+})();
+</script>

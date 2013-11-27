@@ -1,0 +1,19 @@
+<%
+$opt = $opt || {};
+for(var i = 0; i < list.length; i++) {
+	var item = list[i];
+	var stdItem = $opt.getStdItem ? $opt.getStdItem(item) : item;
+%>
+	<li>
+		<span class="parent"><a class="text-gray" href="javascript:void(0);" onclick="return false;" data-rfl-click="remove <%=stdItem.id%>"><i class="icon-remove"></i><%=stdItem.name%></a></span>
+		<%if(stdItem.children && stdItem.children.length) {%>
+			<ul>
+				<%for(var j = 0; j < stdItem.children.length; j++) {
+					var childItem = stdItem.children[j];
+					var stdChildItem = $opt.getStdChildItem ? $opt.getStdChildItem(childItem) : childItem;%>
+					<li><a class="text-gray" href="javascript:void(0);" onclick="return false;" data-rfl-click="removeChild <%=stdItem.id%> <%=stdChildItem.id%>"><i class="icon-remove"></i><%=stdChildItem.name%></a></li>
+				<%}%>
+			</ul>
+		<%}%>
+	</li>
+<%}%>

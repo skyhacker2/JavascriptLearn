@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RFL History Blank</title>
+<script type="text/javascript">
+var PROXY_PAGE = 1;
+</script>
+<!-- include "../../../js/inc/header.js" -->
+</head>
+<body>
+<textarea id="mark"></textarea>
+<script type="text/javascript">
+(function() {
+    var mark = location.hash.replace(/^#/, '');
+    document.getElementById('mark').value = mark;
+    document.title = parent.document.title;
+    if(mark || parent.location.hash) {
+	parent.location.hash = '!' + mark;
+    }
+})();
+</script>
+</body>
+</html>

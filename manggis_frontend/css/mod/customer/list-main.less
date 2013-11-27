@@ -1,0 +1,32 @@
+@import "../../../js/lib/bootstrap-3.0/less/variables.less";
+@import "../../../js/lib/bootstrap-3.0/less/mixins.less";
+@import "../../../js/lib/bootstrap-3.0/less/manggis/mixins.less";
+
+.dashborad {
+	width: 970px; 
+	margin: 0 auto;
+	.panel-heading {
+		cursor: move;
+		.clearfix;
+		h3 {
+			float: left;
+		}
+		.btn-group {
+			float: right;
+		}
+	}
+	.dashboard-inner {
+		position: relative;
+		.mask {
+			position: absolute;
+			background-color: #fff;
+			left: -5px;
+			right: -5px;
+			top: -5px;
+			bottom: 21px;
+			z-index: 99;
+			.opacity(0.7);
+			.border-radius(4px);
+		}
+	}
+}

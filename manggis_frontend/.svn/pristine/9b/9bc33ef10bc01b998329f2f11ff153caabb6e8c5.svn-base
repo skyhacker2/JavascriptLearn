@@ -1,0 +1,30 @@
+<div id="group-inner-div" class="form-group display-none">
+	<label for="group"><%=lang.common.label.userGroup%> %{{mandatory}}%</label>
+	<select id="group" name="group" class="form-control" data-validator="mandatory" data-rfl-keyup="keyupLogin">
+		<option value=""></option>
+		<%
+		var availableCount = 0;
+		var currentGroup = '';
+		for(var i = 0; i < groups.length; i++) {
+			var group = groups[i];
+			if(group.enabled) {
+				currentGroup = group.id;
+				availableCount++;
+		%>
+				<option value="<%=group.id%>" <%=cacheGroup == group.id ? 'selected="selected"' : ''%>><%=group.name%></option>
+		<%	}
+		}%>
+	</select>
+	<span class="help-block help-error"></span>
+</div>
+
+<script type="text/javascript" data-uglify="0">
+if(<%=availableCount%> === 1) {
+	$('#group').val("<%=currentGroup%>");
+} else {
+	$('#group-inner-div').show();
+	if(<%=availableCount%> === 0) {
+		require('rfl').form.highLight($('#group'), '<%=lang.login.msg.noGroup%>', 'error');
+	}
+}
+</script>

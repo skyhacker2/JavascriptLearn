@@ -1,0 +1,10 @@
+{
+	"code": 0,
+	"message": "Update group successfully!",
+	"data": {
+		"id": 2,
+		"name": "List Manager",
+		"enabled": true,
+		"superGroup": false
+	}
+}

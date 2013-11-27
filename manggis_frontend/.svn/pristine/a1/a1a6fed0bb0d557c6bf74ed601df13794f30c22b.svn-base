@@ -1,0 +1,20 @@
+{
+	"request": {
+		"method": "post",
+		"body": {
+			"idConflict": 1,
+			"contactConflict": 1,
+			"columns":[
+				{"columnIndex": 0, "matched": {"id": "1", "name": "Email"}},
+				{"columnIndex": 1, "matched": {"id": "2", "name": "First Name"}}
+			],
+			"groupIds":[]
+		},
+		"remark": "idConflict&contactConflict: 1 - skip, 2 - merge, 3 - create new"
+	},
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"jobId": "1"
+	}
+}

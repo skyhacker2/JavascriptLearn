@@ -1,0 +1,130 @@
+{
+	"code": 0,
+	"message": "ok",
+	"data": {
+		"campaign": {
+			"id": "1"
+		},
+		"total": 100,
+		"listName": "DB Pool",
+		"campaigns": [
+			{
+				"id": "1",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "2",
+				"status": "PENDING",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "3",
+				"status": "APPROVED",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "4",
+				"status": "EXECUTING",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "5",
+				"status": "COMPLETED",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "6",
+				"status": "INTERRUPTED",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "7",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "8",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "9",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "10",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "11",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "12",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			},
+			{
+				"id": "13",
+				"status": "DRAFT",
+				"name": "Happy new year! Happy new year! Happy new year! Happy new year!",
+				"createTime": 1371108472853,
+				"openRate": "0.00",
+				"clickRate": "0.00",
+				"bounceRate": "0.00"
+			}
+		]
+	}
+}

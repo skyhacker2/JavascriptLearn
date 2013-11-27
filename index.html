@@ -1,15 +1,31 @@
 <html>
-
-	<body>
-		<script src="./js/require.js"></script>
+	<head>
+		<script data-main="js/config" src="js/require.js"></script>
 		<script type="text/javascript">
-			requirejs(['js/main'], function(main){
+			require(['jquery', 'main'], function(jq, main){
 				main.run();
+				console.log(jq("#dragme"));
+				/*
+				element.bind("dragstart", function(event) {
+					event = event.originalEvent;
+					event.dataTransfer.effectAllowed = "move";
+					event.dataTransfer.setData("text/plain", $(this).text());
+					event.dataTransfer.setData("text/plain", $(this).html());
+					event.dataTransfer.setDragImage("images/drag.png", -10,-10);
+				});
+				var input =	$("input[type=file]");
+				input.change(function() {
+					alert("wa haha");
+				});
+				*/
 			});
 		</script>
-		<p>
-			hhhh
-		</p>
+	</head>
+
+	<body>
+		
+		<input type="file" multiple>
+		<div id="dragme" draggable="true">Drag me!</div>
 	</body>
 
 </html>

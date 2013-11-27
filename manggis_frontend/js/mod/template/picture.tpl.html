@@ -1,0 +1,61 @@
+<div class="tabbable tabs-left">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#tab1" data-toggle="tab">File</a></li>
+		<li><a href="#tab2" data-toggle="tab">URL</a></li>
+	</ul>
+	<div class="tab-content" style="max-height: 400px; overflow-x: hidden;">
+		<div class="tab-pane active" id="tab1">
+			<div style="position:relative; border:1px dashed #cccccc;background:#f3f3f3;">
+				<div style="width:107px;margin:10px auto;color:#888888;">
+					<i class="icon-desktop" style="font-size:100px"></i>
+					<div style="text-align:center">Click to Upload</div>
+				</div>
+				<!--<button class="btn btn-primary" style="width:150px;">Choose a File</button>-->
+				<div id="upload-file-button" name="upload-file-button" style="position:absolute; top:0px; left:0px; width:409px; height:100%;"></div>
+			</div>
+			<div id="progress-bar" style="width:400px;" class="hidden">
+				<div class="progress-text">0%</div>
+				<div class="progress progress-striped active">
+					<div class="bar" style="width: 0%;"></div>
+				</div>
+			</div>
+			<div id="previewImg"></div>
+		</div>
+		<div class="tab-pane" id="tab2">
+			<div class="form-horizontal" style="margin-top:20px;">
+				<div class="control-group">
+					<label class="control-label" for="url-input" style="width:80px">Input a URL</label>
+					<div class="controls" style="margin-left:100px;">
+						<input id="url-input" name="url-input" data-validator="url" type="text" value="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="alerts" id="myalert"></div>
+<!--<div class="form-horizontal">
+	<div id="you-can-choose">
+		<div style="display:inline;">You can</div> 
+		<div style="position:relative;display:inline;">
+			<button class="btn btn-primary" style="width:150px;">Choose a File</button>
+			<div id="upload-file-button" name="upload-file-button" style="position:absolute; top:0px; left:0px; width:150px; height:100%;"></div>
+		</div>
+		<div style="display:inline"> or <button class="btn btn-primary" data-rfl-click="showInputUrl">Input a Url</button>.</div>
+	</div>
+
+	<div id="progress-bar" style="width:500px;" class="hidden">
+		<div class="progress-text">0%</div>
+		<div class="progress progress-striped active">
+			<div class="bar" style="width: 0%;"></div>
+		</div>
+	</div>
+	<div class="control-group hidden" style="margin-top:20px;">
+		<label class="control-label" for="url-input" >URL</label>
+		<div class="controls">
+			<input id="url-input" name="url-input" data-validator="url" type="text" value="">
+		</div>
+	</div>
+	<div id="previewImg"></div>
+	<div class="alerts" id="myalert"></div>
+</div>-->

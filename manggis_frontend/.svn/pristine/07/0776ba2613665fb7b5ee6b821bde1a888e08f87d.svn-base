@@ -1,0 +1,48 @@
+<h1>Manage [AD] Subject Suffix</h1>
+<p class="desc">
+	Some ISP likes 163 will treat our letter as spam if we don&apos; add [AD] in the subject. In this place, you can set what kind of email domains should have a subject suffix. 
+</p>	
+<div class="row section">
+	<div class="col-md-12 text-right">
+		<a href="javascript:void(0);" onclick="return false;" data-rfl-click="create" class="btn btn-primary responsive"><%=langResourceCommon.label.create%></a> 
+	</div>
+</div>
+
+<table class="table table-striped table-bordered table-responsive section <%=G.IS_PC ? 'table-hover' : ''%>">
+	<thead>
+		<tr>
+			<th width="300">
+				Domains 
+			</th>
+			<th>
+				Suffix 
+			</th>
+			<th width="80"><%=langResourceCommon.label.operation%></th>
+		</tr>
+	</thead>
+	<tbody>
+	<%for(var i = 0; i < data.adRemarks.length; i++) {
+		var item = data.adRemarks[i];%>
+		<tr>
+			<td data-th="Domain : "><%==item.domains.join('; ')%></td>
+			<td data-th="Remark : "><%==item.remark%></td>
+			<td>
+				<div class="text-center">
+					<a href="javascript:void(0);" onclick="return false;" data-rfl-click="editRow <%=i%>" title="<%=langResourceCommon.label.edit%>" data-toggle="tooltip">&nbsp;<i class="icon-pencil"></i>&nbsp;</a>&nbsp;
+					<a href="javascript:void(0);" onclick="return false;" data-rfl-click="delRow <%=i%>" title="<%=langResourceCommon.label.del%>" data-toggle="tooltip">&nbsp;<i class="icon-trash"></i>&nbsp;</a>&nbsp;
+				</div>
+			</td>
+		</tr>
+	<%}%>
+	<%if(!data.adRemarks.length) {%>
+		<tr><td colspan="7"><div class="text-center"><%=langResourceCommon.msg.noResult%></div></td></tr>
+	<%}%>
+	</tbody>
+</table>
+<div class="row">
+	<div class="col-md-7">
+	</div>
+	<div class="col-md-5 pagination-right">
+		<!-- include "../../../html/inc/ajax-history-pager.tpl.html" -->
+	</div>
+</div>

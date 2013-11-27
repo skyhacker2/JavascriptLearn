@@ -1,0 +1,84 @@
+@import "../data-grid/main.less";
+
+.data-grid-setting-wrapper {
+	display: none;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.data-grid-setting-btn-show {
+	position: absolute; 
+	font-size: @font-size-base * 1.25;
+	left: 14px;
+	top: 9px;
+}
+
+.data-grid-setting-wrapper td {
+	padding: 6px;
+}
+
+.data-grid-setting-wrapper tr:hover td {
+	background-color: #f3f3f3;
+}
+
+.data-grid-setting-no-data {
+	color: #888;
+	text-align: center;
+}
+
+// Hidden
+.data-grid-setting-row-hidden {
+	.opacity(50);
+}
+.data-grid-setting-row-hidden .data-grid-setting-name-column {
+	color: #aaa;
+}
+
+// Name Column
+.data-grid-setting-name-column {
+}
+
+// Width Column
+.data-grid-setting-width-column {
+	text-align: right;
+	width: 300px;
+	position: relative;
+}
+.data-grid-setting-height {
+	position: relative;
+}
+.data-grid-setting-width-column input, .data-grid-setting-height input {
+	width: 40px;
+}
+.data-grid-setting-width-column a, .data-grid-setting-height a {
+	padding: 2px 4px;
+	background-color: #ddd;
+	color: #555;
+	text-decoration: none;
+	.border-radius(5px);
+}
+.data-grid-setting-width-column .data-grid-setting-width-on, .data-grid-setting-height .data-grid-setting-height-on {
+	font-weight: bold;
+	background-color: #aaa;
+}
+.data-grid-setting-width-bar {
+	height: 1px; 
+	background: #aaa; 
+	position: absolute; 
+	right: 0; 
+	bottom: 0;
+	.transition(width .5s linear);
+}
+
+// Operation Column
+.data-grid-setting-op-column {
+	color: #888;
+	width: 120px;
+}
+
+// Footer
+.data-grid-setting-footer {
+	margin: 20px 0;
+	padding-bottom: 20px;
+	border-bottom: solid 1px #ccc;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="%{{_lang_}}%">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Test Page for RFL</title>
+</head>
+<body>
+<!-- include "../grunt/grunt-contrib-jasmine/jasmine.css" -->
+<!-- include "../../js/inc/header.js" -->
+<!-- include "../../js/lib/yom/require/config.js" -->
+<!-- include "../../js/lib/yom/require/require.js" -->
+<!-- require "../../js/lib/yom/require-plugin/jsonp" -->
+<!-- require "../../js/lib/yom/require-plugin/ajax" -->
+<!-- require "../../js/lang/%{{_lang_}}%/common" -->
+<!-- include "../../js/inc/footer.js" -->
+<!-- include "../inc/footer.js" -->
+<!-- include "../grunt/grunt-contrib-jasmine/jasmine.js" -->
+<!-- include "../grunt/grunt-contrib-jasmine/jasmine-html.js" -->
+<script type="text/javascript">
+G.test.require(['rfl'], function(rfl) {
+	G.test.require([
+		'test/spec/rfl/ajax',
+		'test/spec/rfl/array',
+		'test/spec/rfl/util',
+		'test/spec/rfl/json',
+		//'test/spec/rfl/cookie',
+		"test/spec/rfl/instance-manager",
+		'jasmine/reporter'
+	], function() {
+		G.test.require(['jasmine/jasmine-helper'], function() {
+		});
+	});
+});
+</script>
+</body>
+</html>

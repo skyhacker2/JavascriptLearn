@@ -1,0 +1,94 @@
+@import "theme-black.less";
+@import "theme-blue.less";
+@import "theme-gray.less";
+@import "theme-green.less";
+@import "theme-purple.less";
+@import "theme-red.less";
+@import "theme-sea.less";
+@import "theme-yellow.less";
+
+.first-screen-loading {
+	.top-bar {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #ccc;
+	}
+}
+.content-is-coming {
+	position: fixed;
+	top: 35%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	color: #555;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+.theme-black {
+	.first-screen-loading .top-bar {
+		background-color: @theme-black-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-black-color, 10%);
+	}
+}
+.theme-blue {
+	.first-screen-loading .top-bar {
+		background-color: @theme-blue-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-blue-color, 10%);
+	}
+}
+.theme-green {
+	.first-screen-loading .top-bar {
+		background-color: @theme-green-color;
+	}
+	.content {
+		color: darken(@theme-green-color, 10%);
+	}
+}
+.theme-gray {
+	.first-screen-loading .top-bar {
+		background-color: @theme-gray-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-gray-color, 10%);
+	}
+}
+.theme-purple {
+	.first-screen-loading .top-bar {
+		background-color: @theme-purple-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-purple-color, 10%);
+	}
+}
+.theme-red {
+	.first-screen-loading .top-bar {
+		background-color: @theme-red-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-red-color, 10%);
+	}
+}
+.theme-sea {
+	.first-screen-loading .top-bar {
+		background-color: @theme-sea-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-sea-color, 10%);
+	}
+}
+.theme-yellow {
+	.first-screen-loading .top-bar {
+		background-color: @theme-yellow-color;
+	}
+	.content-is-coming {
+		color: darken(@theme-yellow-color, 10%);
+	}
+}

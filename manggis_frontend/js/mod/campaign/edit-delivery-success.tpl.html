@@ -1,0 +1,47 @@
+<div class="full-screen-page-header">
+	<div class="header-inner">
+		<i class="icon-file-alt header-icon"></i>
+		<span class="header-title"><%=='xxx'%></span>
+		<ul class="header-actions">
+		</ul>
+	</div>
+</div>
+<div class="app-content-wrapper">
+	<div class="app-content">
+		<div class="guiding success">
+			<div class="icon-part">
+				<i class="icon-smile"></i>
+			</div>
+			<div class="text-part">
+				<h1>
+					<%if(deliveryType == 'immediate') {%>
+						Your campaign has been queued for immediate delivery
+					<%} else {%>
+						Your schedule has been submitted successfully. 
+					<%}%>
+				</h1>
+				<%if(scheduleDate) {%>
+					<p class="desc">
+						The campaign will be deliverred at <%=$opt.util.formatDateTime(scheduleDate, 'yyyy-MM-dd HH:mm')%>
+					</p>
+				<%}%>
+				<a class="btn btn-success" href="html/campaign/edit-<%=G.LANG%>.html#!view/<%=marks[1]%>/overview/<%=marks[3]%>"><i class="icon-eye-open"></i> View this campaign</a> 
+				<span class="text-gray"><%=lang.common.label.or%></span> 
+				<a class="text-gray" href="html/campaign/list-<%=G.LANG%>.html#!<%=urlParams.listId%>">goto manage campaigns</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="full-screen-page-footer">
+	<div class="footer-inner">
+		<button class="btn btn-default pull-left" data-rfl-click="gotoStep delivery"><i class="icon-arrow-left"></i> Previous</button> 
+		<ul class="steps">
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep campaign"><span>Campaign</span></a></li>
+			<li>
+				<a href="javascript:void(0);" data-rfl-click="gotoStep content"><span>Design</span></a>
+			</li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep content-plain-text"><span>Plain Text</span></a></li>
+			<li><a href="javascript:void(0);" data-rfl-click="gotoStep delivery"><span>Delivery</span></a></li>
+		</ul>
+	</div>
+</div>

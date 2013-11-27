@@ -1,0 +1,68 @@
+.border-radius(@radius) {
+	.border-bottom-radius(@radius);
+	.border-top-radius(@radius);
+}
+
+.text-shadow(@shadow) {
+	text-shadow: @shadow;
+	-webkit-text-shadow: @shadow;
+	-moz-text-shadow: @shadow;
+	-o-text-shadow: @shadow;
+	-ms-text-shadow: @shadow;
+}
+
+// Block
+// -------------------------
+.block-basic {
+	background-color: @gray-lighter;
+	padding: @line-height-computed / 2;
+	margin: (@line-height-computed / 2) 0;
+	color: @gray;
+	.border-radius(5px);
+	.clearfix;
+}
+
+// Animation
+// -------------------------
+.animation(@animation) {
+	-webkit-animation: @animation;
+	-moz-animation: @animation;
+	-o-animation: @animation;
+	animation: @animation;
+}
+.animation-name(@animation-name) {
+	-webkit-animation-name: @animation-name;
+	-moz-animation-name: @animation-name;
+	-o-animation-name: @animation-name;
+	animation-name: @animation-name;
+}
+.animation-duration(@animation-duration) {
+	-webkit-animation-duration: @animation-duration;
+	-moz-animation-duration: @animation-duration;
+	-o-animation-duration: @animation-duration;
+	animation-duration: @animation-duration;
+}
+.animation-timing-function(@animation-timing-function) {
+	-webkit-animation-timing-function: @animation-timing-function;
+	-moz-animation-timing-function: @animation-timing-function;
+	-o-animation-timing-function: @animation-timing-function;
+	animation-timing-function: @animation-timing-function;
+}
+.animation-delay(@animation-delay) {
+	-webkit-animation-delay: @animation-delay;
+	-moz-animation-delay: @animation-delay;
+	-o-animation-delay: @animation-delay;
+	animation-delay: @animation-delay;
+}
+.animation-iteration-count(@animation-iteration-count) {
+	-webkit-animation-iteration-count: @animation-iteration-count;
+	-moz-animation-iteration-count: @animation-iteration-count;
+	-o-animation-iteration-count: @animation-iteration-count;
+	animation-iteration-count: @animation-iteration-count;
+}
+.animation-direction(@animation-direction) {
+	-webkit-animation-direction: @animation-direction;
+	-moz-animation-direction: @animation-direction;
+	-o-animation-direction: @animation-direction;
+	animation-direction: @animation-direction;
+}

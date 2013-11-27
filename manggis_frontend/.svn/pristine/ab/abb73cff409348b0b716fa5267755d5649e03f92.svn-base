@@ -1,0 +1,3 @@
+<div contenteditable="true" data-setter="setTxt" style="min-height: 50px;">
+	<%=txt%>
+</div>

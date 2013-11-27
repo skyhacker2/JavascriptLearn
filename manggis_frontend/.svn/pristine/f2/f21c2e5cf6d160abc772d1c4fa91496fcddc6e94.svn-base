@@ -1,0 +1,4 @@
+@theme-blue-color: #3b5998;
+@theme-color: @theme-blue-color;
+
+@link-color: lighten(@theme-color, 10%);
