@@ -1,8 +1,0 @@
-<div class="place-holder-wrapper" style="position: relative;">
-	<i class="icon-remove" style="position: absolute; right: 0; top: -5px; cursor: pointer;"></i>
-	<div class="place-holder-text">
-		Input a Link
-	</div>
-	<input id="link-href" class="input" maxlength="80" type="text" data-validator="mandatory url" />
-	<button class="btn btn-primary" type="button" id="link-submit">Sumit</button>
-</div>

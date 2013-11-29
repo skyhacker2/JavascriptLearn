@@ -1,6 +1,0 @@
-<div class="place-holder-wrapper">
-	<div class="place-holder-text">
-		Input a property name
-	</div>
-	<input id="personalize-property-name" class="form-control" maxlength="80" type="text" />
-</div>

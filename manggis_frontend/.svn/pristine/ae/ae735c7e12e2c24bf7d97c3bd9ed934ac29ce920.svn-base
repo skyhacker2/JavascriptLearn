@@ -1,4 +1,0 @@
-<div class="place-holder-wrapper">
-	<div class="place-holder-text">Select a property</div>
-	<input id="subject-property-list" type="text" class="form-control auto-complete-arrow-down" />
-</div>
