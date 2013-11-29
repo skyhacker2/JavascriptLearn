@@ -1,0 +1,18 @@
+#header {
+  color: black;
+}
+#header .nav {
+  font-size: 12px;
+}
+#header .logo {
+  width: 300px;
+}
+#header .logo:hover {
+  text-decoration: none;
+}
+#header.float {
+  float: left;
+}
+#header ul li {
+  float: left;
+}
