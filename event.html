@@ -3,18 +3,19 @@
 	<title>Events</title>
 </head>
 <body>
+	<div>
+		
+	</div>
 	<button id="myBtn">按钮</button>
 	<input type="checkbox" value="xxx">
 	<script type="text/javascript">
 		function sayHello() {
 			alert('Hello world');
 		}
-		var btn = document.getElementById("myBtn");
-		btn.addEventListener("click", function() {
+		var btn = document.querySelector("#myBtn");
+		btn.addEventListener("click", function(){
 			alert(this.id);
 		}, false);
-		btn.addEventListener("click", sayHello, false);
-		btn.removeEventListener("click", sayHello, false);
 	</script>
 </body>
 </html>
