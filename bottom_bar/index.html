@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Bottom Bar</title>
+	<style type="text/css">
+		.bottom-bar {
+			position: fixed;
+			bottom: -100px;
+			left: 0;
+			right: 0;
+			background-color: #919191;
+			visibility: hidden;
+			z-index: 999;
+			transition: all 0.5s;
+		}
+		.shown {
+			bottom: 0;
+			visibility: visible;
+		}
+		.action , .action p, .action button{
+			display: inline-block;			
+		}
+		.action {
+			padding:10px;
+		}
+	</style>	
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<div class="content">
+		<button id="btn" class="btn">显示</button>
+		<p>hello world</p>
+		<p>hello world</p><p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>hello world</p>
+		<p>10 hello world</p>
+	</div>
+	<div class="bottom-bar">
+		<div class="action">
+			<p>Bottom Bar</p>
+			<button>Action</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".btn").click(function() {
+			$this = $(this);
+			$(".bottom-bar").toggleClass('shown');
+			if ($this.html() == "显示")
+				$this.html("隐藏");
+			else
+				$this.html("显示");
+		});
+	</script>
+</body>
+</html>

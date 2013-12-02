@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Element</title>
+</head>
+<body>
+	<ul id="myList">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+	<div>Hello World!</div>
+	<script type="text/javascript">
+		var ul = document.getElementById("myList");
+		console.log (ul.childNodes.length);
+		var items = ul.getElementsByTagName("li");
+		console.log (items.length);
+
+		var element = document.createElement("div");
+		element.className = "message";
+		var textNode = document.createTextNode("Hello World");
+		element.appendChild(textNode);
+		var attr = document.createAttribute("data-div");
+		attr.value = "click";
+		element.setAttributeNode(attr);
+		document.body.appendChild(element);
+	</script>
+</body>
+</html>

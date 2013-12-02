@@ -1,0 +1,20 @@
+.action-bar {
+	position: fixed;
+	bottom: -100px;
+	left: 0;
+	right: 0;
+	background-color: #919191;
+	visibility: hidden;
+	z-index: 999;
+	transition: all 0.5s;
+}
+.shown {
+	bottom: 0;
+	visibility: visible;
+}
+.action , .action p, .action button{
+	display: inline-block;			
+}
+.action {
+	padding:10px;
+}

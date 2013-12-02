@@ -1,15 +1,16 @@
 {
   "manifest_version": 2,
 
-  "name": "One-click Kittens",
-  "description": "This extension demonstrates a 'browser action' with kittens.",
+  "name": "Action Bar",
+  "description": "Action Bar",
   "version": "1.0",
+  "options_page": "options.html",
 
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-  "permissions": [
-    "https://secure.flickr.com/"
+  "content_scripts": [
+    {
+      "matches": ["http://www.eleven.com/*","https://www.google.com.hk/*"],
+      "css": ["styles.css"],
+      "js": ["jquery.js", "action-bar.js"]
+    }
   ]
 }
