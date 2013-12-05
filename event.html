@@ -9,13 +9,23 @@
 	<button id="myBtn">按钮</button>
 	<input type="checkbox" value="xxx">
 	<script type="text/javascript">
-		function sayHello() {
-			alert('Hello world');
-		}
 		var btn = document.querySelector("#myBtn");
-		btn.addEventListener("click", function(){
-			alert(this.id);
-		}, false);
+		var handler = function(event) {
+			switch (event.type) {
+				case "click":
+					alert("Clicked");
+					break;
+				case "mouseover":
+					event.target.style.backgroundColor = "red";
+					break;
+				case "mouseout":
+					event.target.style.backgroundColor = "";
+					break;
+			}
+		};
+		btn.onclick = handler;
+		btn.onmouseover = handler;
+		btn.onmouseout = handler;
 	</script>
 </body>
 </html>
