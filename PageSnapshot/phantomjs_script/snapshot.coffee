@@ -3,7 +3,7 @@ system = require('system')
 config = require('./config.js')
 
 class Snapshot
-	onTime: (e)=>
+	onTimeout: (e)=>
 		console.log 'time out.'
 		phantom.exit(2)
 
@@ -11,10 +11,12 @@ class Snapshot
 		if status isnt 'success'
 			phantom.exit(3)
 		else
+			console.log 'open page success'
 			setTimeout @snapshot, 200
 
 	snapshot: =>
 		page.render(@file)
+		console.log 'snapshot success'
 		phantom.exit(0)
 
 
@@ -28,7 +30,7 @@ class Snapshot
 			page.viewportSize = config.viewportSize
 			for key, val of config.settings
 				page.settings[key] = val
-			page.onResourceTimeout = onTimeout
+			page.onResourceTimeout = @onTimeout
 			page.open @url, @onOpen
 
 snapshot = new Snapshot()
