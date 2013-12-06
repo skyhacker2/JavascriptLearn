@@ -1,37 +1,55 @@
-page = require('webpage').create()
+Webpage = require('webpage')
 system = require('system')
 config = require('./config.js')
+Job = require('../job')
 
 class Snapshot
-	onTimeout: (e)=>
-		console.log 'time out.'
-		phantom.exit(2)
 
-	onOpen: (status)=>
-		if status isnt 'success'
-			phantom.exit(3)
+	constructor: ->
+		@count = 0
+
+	onFinishOne: ->
+		@count += 1
+		if @count is @jobs.jobList.length
+			console.log 'phantom exit()'
+			phantom.exit(0)
 		else
-			console.log 'open page success'
-			setTimeout @snapshot, 200
+			console.log @count
+			console.log @jobs.jobList.length
 
-	snapshot: =>
-		page.render(@file)
-		console.log 'snapshot success'
-		phantom.exit(0)
+	doJob: (job)=>
+		page = Webpage.create()
+		page.viewportSize = config.viewportSize
+		for key, val of config.settings
+			page.settings[key] = val
+		page.open job.url, (status)=>
+			if (status is 'fail')
+				data = {
+					job: job,
+					status: 'fail'
+				}
+			else
+				page.render(job.path)
+				data = {
+					job: job,
+					status: 'success'
+				}
+			console.log JSON.stringify(data)
+			@onFinishOne()
 
+	begin: (jobs)=>
+		for job in jobs.jobList
+			@doJob(job)
 
 	init:->
-		if system.args.length < 3 or system.args.length > 3
-			console.log 'Usage: snapshot.js URL FILE'
+		if system.args.length < 2 or system.args.length > 2
+			console.log 'Usage: snapshot.js {"jobList": [{"url":"www.example.com", "path":"./example.png"}]}'
 			phantom.exit(1)
 		else
-			@url = system.args[1]
-			@file = system.args[2]
-			page.viewportSize = config.viewportSize
-			for key, val of config.settings
-				page.settings[key] = val
-			page.onResourceTimeout = @onTimeout
-			page.open @url, @onOpen
+			# Need to parse twice, I don't know why.
+			@jobs = JSON.parse(system.args[1])
+			@jobs = JSON.parse(@jobs)
+			@begin(@jobs)
 
 snapshot = new Snapshot()
 snapshot.init();
