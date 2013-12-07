@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Server</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Test Config</h1>
+		<div class="row">
+			<div class="col-sm-5">
+				<label>Url: </label><input class="url form-control" type="text">
+			</div>
+			<div class="col-sm-5">
+				<label>Test Number:</label><input class="num form-control" type="text">
+			</div>
+		</div><br>
+		<button class="start-btn">开始</button>
+		<hr>
+		<h1>Client Lists</h1>
+		<table class="table clients">
+			<tr>
+				<th>Client ID</th>
+				<th>Ready</th>
+				<th>Finished</th>
+				<th>Unfinished</th>
+				<th>Time</th>
+			</tr>
+		</table>
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery.js"></script>
+	<script>
+		var socket = io.connect('http://localhost');
+		socket.on('news', function (data) {
+			console.log(data);
+		    socket.emit('server', { msg: 'server' });
+		});
+		socket.on('client_data', function(data) {
+			console.log (data);
+			var arr = data.data;
+			for (var i = arr.length; i--;) {
+				$('.clients').append([
+					'<tr>',
+					'<td>' + arr[i].clientId + '</td>',
+					'<td>' + arr[i].ready + '</td>',
+					'<td></td>',
+					'<td></td>',
+					'<td></td>'
+					].join(''));
+			}
+		});
+
+		socket.on('client connected', function(data) {
+			console.log(data);
+			console.log(['<tr>',
+				'<td></td>',
+				'<td>dddd</td>',
+				'<td></td>',
+				'<td></td>',
+				'<td></td>'
+				].join(''));
+			$('.clients').append([
+				'<tr>',
+				'<td>' + data.clientId + '</td>',
+				'<td>' + data.ready + '</td>',
+				'<td></td>',
+				'<td></td>',
+				'<td></td>'
+				].join(''));
+		});
+	</script>
+</body>
+</html>

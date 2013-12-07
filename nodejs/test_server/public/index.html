@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>client</title>
+</head>
+<body>
+	<p>Hello Client</p>
+	<p>msg:<span class="msg"></span></p>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery.js"></script>
+	<script>
+		var socket = io.connect('http://localhost:8080');
+		var ready = false;
+		function count(num) {
+			c = 0;
+			n = num;
+			return function() {
+				c++;
+				if (c == num) {
+					socket.emit('done',{});
+				}
+			}
+		}
+		socket.on('news', function (data) {
+			console.log(data);
+		    socket.emit('client', { msg:'client'});
+		    // test host
+		    /*
+		    $.ajax({
+				url:"http://snapshot.manggis.internal/extract?url=http://www.baidu.com",
+				type: 'GET',
+				dataType:'json',
+				crossDomain: true,
+				success: function(data) {
+					socket.emit('ready',{});
+					ready = true;
+				},
+				error: function(data) {
+					socket.emit('not ready', {
+						msg: 'access http://snapshot.manggis.internal/extract?url=http://www.baidu.com fail.'
+					});
+					ready = false;
+				}
+			});
+			*/
+			$.get('http://snapshot.manggis.internal/getExtract', {
+				url: 'http://www.baidu.com'
+			}, function (data) {
+				socket.emit('ready',{});
+				ready = true;
+			});
+		});
+
+		socket.on('start', function(data) {
+			if (!ready) return;
+			var url = data.url;
+			var num = data.num;
+			for (var i = 0; i < num; i++) {
+				$.ajax({
+					url:'http://snapshot.manggis.internal/extract?'+url,
+					type: 'GET',
+					crossDomain: true,
+					success: function(data) {
+						count();
+						socket.emit('ok',{});
+					},
+					error: function(data) {
+						socket.emit('error',{});
+						count();
+					}
+				});
+			}
+
+		});
+
+	</script>
+</body>
+</html>
