@@ -4,9 +4,21 @@ var express = require('express')
   , io = require('socket.io').listen(server)
   , clients = [];
 
+var counter = function() {
+  var i = 1;
+  return function() {
+    return i++;
+  }
+};
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With');
+    next();
+}
+
+app.use(allowCrossDomain);
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(__dirname + '/public/css'));
-//app.use(express.static(__dirname + '/public/font'));
 
 server.listen(8080);
 
@@ -22,92 +34,50 @@ app.get('/', function (req, res) {
 
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
 
+  socket.emit('news', {});
+  
+  // Client connected.
   socket.on('client', function (data) {
     clients.push({
-        socket:socket,
-        ready: false,
-        finish: false
+      id: socket.id,
+      finished: 0,
+      time: 0
     });
-    io.sockets.emit('server', {});
-    console.log(data);
+    socket.broadcast.emit('client_conn', {clients: clients});
   });
 
-  socket.on('server', function(data) {
-    console.log(data);
-    var data =[];
-    for (var i = clients.length; i--;){
-      data.push({
-        clientId: i,
-        ready: clients[i].ready
-      });
-    }
-
-    socket.emit('client_data', {
-      data: data
-    });
-  });
-
-  socket.on('ready', function(data) {
+  // Client finish one.
+  socket.on('finish one', function (data) {
     for (var i = clients.length; i--;) {
-      var client = clients[i];
-      if (client.socket === socket) {
-        client.ready = true;
-        socket.emit('client connected', {clientId: i, ready: 'true'});
+      if (clients[i].id === socket.id) {
+        clients[i].finished += 1;
+        clients[i].time = data.time;
         break;
       }
     }
+    socket.broadcast.emit('client_conn', {clients: clients});
   });
 
-  socket.on('not ready', function(data) {
-    for (var i = clients.length; i--;) {
-      var client = clients[i];
-      if (client.socket === socket) {
-        client.ready = false;
-        socket.emit('client connected', {clientId: i, ready: 'false'});
-        break;
-      }
-    }
+  // Server connected.
+  socket.on('server', function (data) {
+    socket.emit('client_conn', {clients: clients});
   });
 
-  // when a client finish a job
-  socket.on('ok', function(data) {
-    for (var i = clients.length; i--;) {
-      var client = clients[i];
-      if (client.socket === socket) {
-        socket.emit('finish one', {clientId: i});
-        break;
-      }
-    }
+  // Start to test
+  socket.on('start', function (data) {
+    console.log('start');
+    socket.broadcast.emit('start the job', {data: data});
+    //socket.broadcast.json.send({data: 'message'});
   });
 
-  // when a client happen a error
-  socket.on('error', function(data) {
-    for (var i = clients.length; i--;) {
-      var client = clients[i];
-      if (client.socket === socket) {
-        socket.emit('unfinish one', {clientId: i});
-        break;
-      }
-    }
-  });
-
-  // when server start the test
-  socket.on('start test', function(data) {
-    socket.emit('start', data);
-  });
 
   socket.on('disconnect', function () {
-    console.log('DISCONNESSO!!! ');
-    for (var i = clients.length; i--;) {
-      var client = clients[i];
-      if (client.socket === socket)
+    for (var i = clients.length; i--;)
+      if (clients[i].id === socket.id) {
         clients.splice(i, 1);
-    }
-    socket.emit('client_data', {
-        msg: clients.length
-    });
+      }
+    console.log('DISCONNESSO!!! ');
   });  
 });
 

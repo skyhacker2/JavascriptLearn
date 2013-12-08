@@ -18,56 +18,44 @@
 		<hr>
 		<h1>Client Lists</h1>
 		<table class="table clients">
-			<tr>
-				<th>Client ID</th>
-				<th>Ready</th>
-				<th>Finished</th>
-				<th>Unfinished</th>
-				<th>Time</th>
-			</tr>
+			<thead>
+				<tr>
+					<th>Client ID</th>
+					<th>Finished</th>
+					<th>Time</th>
+				</tr>
+			<thead>
+			<tbody>
+			</tbody>
 		</table>
 	</div>
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/jquery.js"></script>
 	<script>
-		var socket = io.connect('http://localhost');
+		var socket = io.connect('http://192.168.10.107:8080');
 		socket.on('news', function (data) {
-			console.log(data);
 		    socket.emit('server', { msg: 'server' });
 		});
-		socket.on('client_data', function(data) {
-			console.log (data);
-			var arr = data.data;
-			for (var i = arr.length; i--;) {
-				$('.clients').append([
+		socket.on('client_conn', function(data) {
+			//console.log (data);
+			clients = data.clients
+			$('.clients tbody').html('');
+			for (var i = clients.length; i--;) {
+				$('.clients tbody').append([
 					'<tr>',
-					'<td>' + arr[i].clientId + '</td>',
-					'<td>' + arr[i].ready + '</td>',
-					'<td></td>',
-					'<td></td>',
-					'<td></td>'
+					'<td>' + clients[i].id + '</td>',
+					'<td>' + clients[i].finished + '</td>',
+					'<td>' + clients[i].time + ' ms</td>'
 					].join(''));
 			}
 		});
 
-		socket.on('client connected', function(data) {
-			console.log(data);
-			console.log(['<tr>',
-				'<td></td>',
-				'<td>dddd</td>',
-				'<td></td>',
-				'<td></td>',
-				'<td></td>'
-				].join(''));
-			$('.clients').append([
-				'<tr>',
-				'<td>' + data.clientId + '</td>',
-				'<td>' + data.ready + '</td>',
-				'<td></td>',
-				'<td></td>',
-				'<td></td>'
-				].join(''));
+		$(".start-btn").click(function() {
+			console.log('start');
+			var url = $(".url").val();
+			var num = $(".num").val();
+			socket.emit('start', {url:url, num: num});
 		});
 	</script>
 </body>
