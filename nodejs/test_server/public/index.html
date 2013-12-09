@@ -8,6 +8,7 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/jquery.js"></script>
 	<script>
+		var socket = io.connect('http://192.168.10.107:8080');
 		function count() {
 			var i = 0;
 			var start = new Date();
@@ -18,7 +19,23 @@
 				return {finished: i, time: spend};
 			}
 		}
-		var socket = io.connect('http://192.168.10.107:8080');
+		function getImage(id, counter) {
+			$.get('http://192.168.10.107/getImage', {
+				id: id
+			}, function(res) {
+				if (res.msg === 'ok') {
+					var c = counter();
+					$('.msg').html("finished: " + c.finished + " spend time: " + c.time);
+					socket.emit('finish one', c);
+					console.log(c);
+				} else {
+					setTimeout(function () {
+						getImage(id, counter);
+					}, 1000);
+				}
+			});
+		}
+		
 		socket.on('news', function (data) {
 			socket.emit('client',{});
 		});
@@ -29,13 +46,12 @@
 			var url = data.data.url;
 			//console.log(num);
 			for (var i = 0; i < num; i++) {
-				console.log('hhh');
-				$.get('http://192.168.10.107/extract2', {
+				$.get('http://192.168.10.107/extract3', {
 					url: url
 				}, function(res) {
-					var c = counter();
-					$('.msg').html("finished: " + c.finished + " spend time: " + c.time);
-					socket.emit('finish one', c);
+					setTimeout(function(){
+						getImage(res.id, counter);
+					}, 1000);
 				});
 			}
 		});
